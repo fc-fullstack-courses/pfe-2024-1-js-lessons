@@ -55,3 +55,17 @@ console.log(age);
 let otherUserAge = 99;
 
 console.log(otherUserAge);
+
+/*
+  Подивитися на різницю між змінними створеними через let та const
+
+    1. Проініціалізуйте let змінну username1 з якимось текстом
+    2. Подивіться через console.log на вміст username1
+    3. Змінить вміст username1
+    4. Знову подивіться через console.log на вміст username1
+
+    5. Проініціалізуйте const змінну username2 з якимось текстом
+    6. Подивіться через console.log на вміст username2
+    7. Змінить вміст username2
+    8. Знову подивіться через console.log на вміст username2
+*/
