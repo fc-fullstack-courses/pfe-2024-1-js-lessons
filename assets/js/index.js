@@ -38,6 +38,20 @@ undefined;
 
 // функція
 // alert('якісь вхідні дані');
-console.log(10);
-console.log('10');
-console.log('test string');
+// console.log(10);
+// console.log('10');
+// console.log('test string');
+
+// змінні
+// створення пустої змінної (оголошення змінної)
+let age;
+
+// присвоєння значення змінній
+age = 50;
+
+console.log(age);
+
+// ініціалізація змінної (оголошення + присвоєння одразу)
+let otherUserAge = 99;
+
+console.log(otherUserAge);
