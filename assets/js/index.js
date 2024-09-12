@@ -12,6 +12,8 @@
 "приклад тексту";
 `приклад тексту`;
 
+
+
 // тип даних Number
 10;
 -50;
@@ -32,4 +34,10 @@ null;
 undefined;
 
 // тип даних Symbol
-new Symbol('приклад символу');
+// new Symbol('приклад символу');
+
+// функція
+// alert('якісь вхідні дані');
+console.log(10);
+console.log('10');
+console.log('test string');
