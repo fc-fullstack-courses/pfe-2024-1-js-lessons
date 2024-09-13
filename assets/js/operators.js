@@ -36,3 +36,45 @@ console.log((-5) ** 2);
 console.log('10 % 3');
 console.log(10 % 3);
 console.log(10 % -3);
+
+// інкрементатори / декрементатори
+let counter = 0;
+
+console.log(counter);
+
+counter++; // +1 
+
+console.log(counter);
+
+counter++; // +1
+counter++; // +1
+counter++; // +1
+
+console.log(counter);
+
+counter--; // 4 - 1 = 3
+
+console.log(counter);
+
+counter--; // 3 - 1 = 2
+
+console.log(counter);
+
+// counter++ / counter-- - постфіксний
+// ++counter / ++counter - префіксні
+
+let counter1 = 10;
+
+console.log(++counter1); // 11
+
+console.log(counter1); // 11
+
+console.log(++counter1); // 12
+
+let counter2 = 10;
+
+console.log(counter2++); // 10
+
+console.log(counter2); // 11
+
+console.log(counter2++); // 11
