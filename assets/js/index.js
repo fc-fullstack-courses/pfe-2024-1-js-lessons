@@ -49,12 +49,12 @@ let age;
 // присвоєння значення змінній
 age = 50;
 
-console.log(age);
+// console.log(age);
 
 // ініціалізація змінної (оголошення + присвоєння одразу)
 let otherUserAge = 99;
 
-console.log(otherUserAge);
+// console.log(otherUserAge);
 
 /*
   Подивитися на різницю між змінними створеними через let та const
@@ -69,3 +69,30 @@ console.log(otherUserAge);
     7. Змінить вміст username2
     8. Знову подивіться через console.log на вміст username2
 */
+
+// помилка - неможна звертатися до змінної перед її створенням
+console.log(username1);
+
+let username1 = 'User 1';
+
+console.log(username1);
+
+username1 = 50;
+
+//  помилка - неможна перестворити існуючу змінну
+// let username1 = 50;
+
+console.log(username1);
+
+// помилка const обов'язково має бути проініціалізований
+// const username2;
+const username2 = 'User 2';
+
+console.log(username2);
+
+// помилка - перезапис константи
+username2 = 'Test user 2';
+
+let user3 = 'new user';
+
+console.log(user3);
