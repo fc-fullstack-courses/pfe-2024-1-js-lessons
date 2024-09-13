@@ -71,13 +71,13 @@ let otherUserAge = 99;
 */
 
 // помилка - неможна звертатися до змінної перед її створенням
-console.log(username1);
+// console.log(username1);
 
 let username1 = 'User 1';
 
 console.log(username1);
 
-username1 = 50;
+username1 = false;
 
 //  помилка - неможна перестворити існуючу змінну
 // let username1 = 50;
@@ -91,8 +91,10 @@ const username2 = 'User 2';
 console.log(username2);
 
 // помилка - перезапис константи
-username2 = 'Test user 2';
+// username2 = 'Test user 2';
 
 let user3 = 'new user';
 
 console.log(user3);
+
+console.log(0.1 + 0.2);
