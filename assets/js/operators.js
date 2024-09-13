@@ -78,3 +78,12 @@ console.log(counter2++); // 10
 console.log(counter2); // 11
 
 console.log(counter2++); // 11
+
+
+// унарні оператори
+// + , -
+
+console.log(-10);
+console.log(+500);
+// перетворення типу на числовий
+console.log(+null);
