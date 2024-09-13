@@ -14,7 +14,11 @@ console.log(typeof bug); // object
 // +, -, *, /
 
 console.log('2 + 2');
-console.log(2 + 2);
+console.log(2 + 2); // нормальна математика
+console.log(true + true + true); // 3
+// конкаткенація (склеювання) рядків
+console.log('_____' + 10 + 25 + 30);
+console.log('' + null);
 
 console.log('5 - 2');
 console.log(5 - 2);
