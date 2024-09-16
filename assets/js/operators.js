@@ -91,3 +91,32 @@ console.log(-10);
 console.log(+500);
 // перетворення типу на числовий
 console.log(+null);
+
+// let test = num1 + num1;
+
+// 50 - test;
+
+// Логічні оператори
+
+console.log('================ Логічні оператори ===================');
+
+// Порівняння 
+/*
+  > - більше
+  < - меньше
+  >= - більше або дорівнює
+  <= - меньше або дорівнює
+*/
+console.log(10 > 5); // true
+
+console.log(5 > 10); // false
+
+console.log(5 < 10); // true
+
+console.log(10 > 10); // false
+console.log(10 < 10); // false
+
+console.log(10 >= 10); // true
+console.log(10 <= 10); // true
+
+console.log('cat' > 'm'); // false
