@@ -138,3 +138,18 @@ console.log(1000 === '1000'); // false
 console.log(1000 == '1000'); // true
 
 console.log(50 !== 100); // true
+
+// Логічне заперечення
+console.log(!true); // false
+console.log(!false); // true
+
+console.log(!10); // false
+console.log(!''); // true
+console.log(!' '); // false
+console.log(!0); // true
+console.log(!null); // true
+console.log(!undefined); // true
+console.log(!NaN); // true
+
+// перетворення значення на буевий еквівалент
+console.log(!!10); // true
