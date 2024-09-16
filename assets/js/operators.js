@@ -176,3 +176,21 @@ console.log(testNumber > 0 && testNumber < 100); // true
 console.log(null && NaN); // null
 console.log(100 && undefined); // undefined
 console.log('test' && -57); // -57
+
+// Присвоєення
+/*
+  +=
+  -=
+  *=
+  /=
+  **=
+*/
+let age = 13;
+
+// age = age + 5;
+age += 5;
+age -= 3;
+
+age += 1;
+
+console.log(age);
