@@ -120,3 +120,21 @@ console.log(10 >= 10); // true
 console.log(10 <= 10); // true
 
 console.log('cat' > 'm'); // false
+
+// Рівність значень
+/*
+  == - оператор рівності
+  === - оператор жорсткої рівності
+
+  != - оператор нерівності
+  !== -  оператор жорсткої нерівності
+*/ 
+console.log('================ Рівність значень ===================');
+console.log(10 === 15); // false
+console.log(15 === 15); // true
+console.log("Anton" === "Anton"); // true
+
+console.log(1000 === '1000'); // false
+console.log(1000 == '1000'); // true
+
+console.log(50 !== 100); // true
