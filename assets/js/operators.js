@@ -153,3 +153,26 @@ console.log(!NaN); // true
 
 // перетворення значення на буевий еквівалент
 console.log(!!10); // true
+
+// Логічне "І" та логічне "АБО"
+/*
+  && - Логічне "І"
+    повертає правдиве значення якщо і ліва і права частина правдива
+    (повертає або перше брехливе значення або останне правдиве значення)
+
+  || - Логічне "АБО"
+    повертає правдиве значення якщо або ліва або права частина є правдивою
+    (повертає або перше правдиве значення або останне брехливе значення)
+*/
+
+const testNumber = 17.5;
+
+// console.log(100 > testNumber > 0);
+console.log(testNumber > 0); // true
+console.log(testNumber < 100); // true
+
+console.log(testNumber > 0 && testNumber < 100); // true
+
+console.log(null && NaN); // null
+console.log(100 && undefined); // undefined
+console.log('test' && -57); // -57
