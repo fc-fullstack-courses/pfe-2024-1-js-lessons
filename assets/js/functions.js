@@ -46,12 +46,9 @@
 // Створення функцій
 
 // functional expression (функціональний вираз)
-const myFirstFunction = function(firstNumber, secondNumber) {
+const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   // тіло функції - блок коду який буде виконано 
   // коли функція запуститься
-  // console.log('Hello from first function');
-  // console.log('you can do anything you wan here');
-  // console.log('Ви передали функціі на вхід наступне значення: ' + firstParam);
 
   const sumResult = firstNumber + secondNumber;
   
@@ -60,12 +57,13 @@ const myFirstFunction = function(firstNumber, secondNumber) {
   // return firstNumber + secondNumber;
   return sumResult;
 
+  // це недосяжний блок коду
   console.log(sumResult);
 }
 
-const result = myFirstFunction(10, 50);
+const result = getSumOfTwoNumbers(10, 50);
 
-alert('Result is: ' + result);
+// alert('Result is: ' + result);
 // const result1 = myFirstFunction(10);
 // myFirstFunction('this is firstParam');
 // myFirstFunction();
