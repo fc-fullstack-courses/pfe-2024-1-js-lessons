@@ -67,9 +67,9 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
 // const firstNumber = prompt("Enter first number");
 // const secondNumber = prompt("Enter second number");
 
-const result = getSumOfTwoNumbers(1000, 500);
+// const result = getSumOfTwoNumbers(1000, 500);
 
-console.log('Result is: ' + result);
+// console.log('Result is: ' + result);
 
 const num1 = +prompt("Enter first number");
 const num2 = +prompt("Enter second number");
