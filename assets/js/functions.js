@@ -50,6 +50,9 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   // тіло функції - блок коду який буде виконано 
   // коли функція запуститься
 
+  // const firstNumber = +prompt("Enter first number");
+  // const secondNumber = +prompt("Enter second number");
+
   const sumResult = firstNumber + secondNumber;
   
   // return каже функції її підсумковий результат роботи
@@ -61,7 +64,20 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   console.log(sumResult);
 }
 
-const result = getSumOfTwoNumbers(10, 50);
+// const firstNumber = prompt("Enter first number");
+// const secondNumber = prompt("Enter second number");
+
+const result = getSumOfTwoNumbers(1000, 500);
+
+console.log('Result is: ' + result);
+
+const num1 = +prompt("Enter first number");
+const num2 = +prompt("Enter second number");
+
+const result2 = getSumOfTwoNumbers(num1, num2);
+
+
+console.log('Result2 is: ' + result2);
 
 // alert('Result is: ' + result);
 // const result1 = myFirstFunction(10);
