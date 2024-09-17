@@ -39,6 +39,21 @@
 
 // alert(num1 + num2);
 
-const result = prompt();
+// const result = prompt();
 
-console.log(result);
+// console.log(result);
+
+// Створення функцій
+
+// functional expression (функціональний вираз)
+const myFirstFunction = function() {
+  // тіло функції - блок коду який буде виконано 
+  // коли функція запуститься
+  console.log('Hello from first function');
+  console.log('you can do anything you wan here');
+}
+
+myFirstFunction();
+// myFirstFunction();
+// myFirstFunction();
+
