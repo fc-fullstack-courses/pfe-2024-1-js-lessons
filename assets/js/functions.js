@@ -17,12 +17,10 @@
 
 // alert(greetingText);
 
-
 // const num1 = prompt("Enter first number");
 // const num2 = prompt("Enter second number");
 
 // alert(+num1 + +num2);
-
 
 // const num1 = +prompt("Enter first number");
 // const num2 = +prompt("Enter second number");
@@ -46,17 +44,25 @@
 // Створення функцій
 
 // functional expression (функціональний вираз)
-const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
-  // тіло функції - блок коду який буде виконано 
+const getSumOfTwoNumbers = function (firstNumber, secondNumber) {
+  // тіло функції - блок коду який буде виконано
   // коли функція запуститься
 
   // завершити функцію якщо параметри не є нормальними числами
-  if(typeof firstNumber !== 'number' || typeof secondNumber !== 'number') {
+  if (typeof firstNumber !== 'number' || typeof secondNumber !== 'number') {
     return null;
   }
 
   // if(firstNumber !== firstNumber || secondNumber !== secondNumber) {
-  if(isNaN(firstNumber - secondNumber)) {
+
+  // правда = NaN, брехня - нормальне значення
+  // const isNaNResult = isNaN(firstNumber - secondNumber);
+
+  // if(isNaNResult) {
+  //   return null;
+  // }
+
+  if (isNaN(firstNumber - secondNumber)) {
     return null;
   }
 
@@ -68,7 +74,7 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   // const secondNumber = +prompt("Enter second number");
 
   const sumResult = firstNumber + secondNumber;
-  
+
   // return каже функції її підсумковий результат роботи
   // після першого виконаного рядка з return функція зупиняє свою роботу
   // return firstNumber + secondNumber;
@@ -76,7 +82,7 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
 
   // це недосяжний блок коду
   console.log(sumResult);
-}
+};
 
 // const firstNumber = prompt("Enter first number");
 // const secondNumber = prompt("Enter second number");
@@ -89,7 +95,6 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
 // const num2 = +prompt("Enter second number");
 
 const result2 = getSumOfTwoNumbers(NaN, 10);
-
 
 console.log('Result2 is: ' + result2);
 
