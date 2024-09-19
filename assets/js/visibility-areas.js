@@ -23,10 +23,41 @@ const testFunc = function() {
 
 // console.log(number); // 10
 
-testFunc();
+// testFunc();
 
-console.log(number); // 10
+// console.log(number); // 10
 // console.log(number2); // error
 
 // це не область видимості
 // let test = {};
+
+// Чому var поганий
+
+var varVarible1 = 'var 1';
+
+console.log(varVarible1); // 'var 1'
+
+varVarible1 = 'changed var 1';
+
+console.log(varVarible1); // 'changed var 1'
+
+const varTestingFunction = function () {
+  var varVarible1 = 5;
+
+  console.log(varVarible1); // 5
+
+  if(true) {
+    var varVarible2 = 'var 2';
+
+    console.log(varVarible1); // 5
+    console.log(varVarible2); // 'var 2'
+  }
+
+  console.log(varVarible2); // 'var 2'
+}
+
+// varTestingFunction();
+
+console.log(varVarible1); // 'changed var 1'
+
+// console.log(varVarible2); // error
