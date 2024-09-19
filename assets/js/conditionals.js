@@ -26,14 +26,78 @@ if (text) {
   console.log('блок коду 3');
 }
 
-let number = +prompt('Enter number');
+// let number = +prompt('Enter number');
 
-if (number > 0) {
-  console.log('Number is positive');
-} else if (number < 0) {
-  console.log('Number is negative');
-} else if (number === 0) {
-  console.log('Number is zero');
-} else {
-  console.log('Number is Not a Number');
+// if (number > 0) {
+//   console.log('Number is positive');
+// } else if (number < 0) {
+//   console.log('Number is negative');
+// } else if (number === 0) {
+//   console.log('Number is zero');
+// } else {
+//   console.log('Number is Not a Number');
+// }
+
+// тернарний оператор
+// це спеціальний оператор який може замінита вам конструкцію if(умова) {} else {}
+/*
+  if(умова) {
+  // дія 1
+  } else {
+  // дія 2
+  }
+
+  умова ? дія 1 : дія 2;
+*/
+
+// const userName = prompt('Введіть ваше ім`я');
+
+// if(userName) {
+//   alert('Привіт, ' + userName);
+// } else {
+//   alert('Привіт, гість');
+// }
+
+// userName ? alert('Привіт, ' + userName) : alert('Привіт, гість');
+
+const getUserPrompt1 = function () {
+  const userPrompt = prompt('Введіть щось');
+
+  // if(userPrompt) {
+  //   return userPrompt;
+  // } else {
+  //   return 'Користувач нічого не ввів';
+  // }
+  // debugger;
+  return userPrompt ? userPrompt : 'Користувач нічого не ввів';
 }
+
+// const res1 = getUserPrompt1();
+
+// console.log(res1);
+
+// const userName = prompt('Введіть ваше ім`я');
+// let greetingMessage;
+
+// if(userName) {
+//   greetingMessage = 'Привіт, ' + userName;
+// } else {
+//   greetingMessage = 'Привіт, гість';
+// }
+
+// greetingMessage = userName ? 'Привіт, ' + userName : 'Привіт, гість';
+
+// const greetingMessage = userName ? 'Привіт, ' + userName : 'Привіт, гість';
+
+// alert(greetingMessage);
+
+
+const userName = prompt('Введіть ваше ім`я');
+
+// if(userName) {
+//   alert('Привіт, ' + userName);
+// } else {
+//   alert('Привіт, гість');
+// }
+
+alert( userName ? 'Привіт, ' + userName : 'Привіт, гість' );
