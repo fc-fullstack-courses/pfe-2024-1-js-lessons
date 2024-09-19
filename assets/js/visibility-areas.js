@@ -33,6 +33,11 @@ const testFunc = function() {
 
 // Чому var поганий
 
+// робить точку зупинки скрипта для дебаггера
+// debugger;
+
+1000 > 100 && 50 < 0;
+
 var varVarible1 = 'var 1';
 
 console.log(varVarible1); // 'var 1'
@@ -60,4 +65,4 @@ const varTestingFunction = function () {
 
 console.log(varVarible1); // 'changed var 1'
 
-// console.log(varVarible2); // error
+console.log(varVarible2); // error
