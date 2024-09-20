@@ -54,10 +54,27 @@ while(умова_продовження) {
   7
   9
 */
-let counter1 = 0;
-while(counter1 < 10) {
-  if(counter1 % 2 !== 0) {
-    console.log(counter1);
-  }
-  counter1++;
-}
+// let counter1 = 0;
+// while(counter1 < 10) {
+//   if(counter1 % 2 !== 0) {
+//     console.log(counter1);
+//   }
+//   counter1++;
+// }
+
+// цикл do ... while
+/*
+  цикл do ... while завжди відпрацює 
+  мінімум 1 раз
+
+do {
+  // тіло циклу
+} while (умова)
+*/
+
+let counter2 = 0;
+debugger;
+do {
+  alert('iteration');
+  counter2++;
+} while (1000000000 < 0);
