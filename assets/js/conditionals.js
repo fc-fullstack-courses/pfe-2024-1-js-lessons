@@ -70,7 +70,7 @@ const getUserPrompt1 = function () {
   // }
   // debugger;
   return userPrompt ? userPrompt : 'Користувач нічого не ввів';
-}
+};
 
 // const res1 = getUserPrompt1();
 
@@ -90,7 +90,6 @@ const getUserPrompt1 = function () {
 // const greetingMessage = userName ? 'Привіт, ' + userName : 'Привіт, гість';
 
 // alert(greetingMessage);
-
 
 // const userName = prompt('Введіть ваше ім`я');
 
@@ -156,7 +155,7 @@ const getCardCashbackPercenage = function (cardLevel) {
   let cashbackPercentage;
 
   switch (cardLevel) {
-    case 'basic': 
+    case 'basic':
     case 'basic+':
     case 'basic++': {
       cashbackPercentage = 1.2;
@@ -180,4 +179,48 @@ const getCardCashbackPercenage = function (cardLevel) {
   }
 
   return cashbackPercentage;
-}
+};
+
+/*
+  Написати функцію яка приймає рядок з назвою місяця або номер місяця
+  функція за допомогою конструкції switch ... case має повернути назву
+  сезону (весна, літо. осінь, зима)
+
+  getSeason('квітень') -> 'весна'
+  getSeason(12) -> 'зима'
+*/
+
+const getSeason = function (month) {
+  switch (month) {
+    case 'December':
+    case 'January':
+    case 'February':
+    case 1:
+    case 2:
+    case 12:
+      return 'Winter';
+    case 'March':
+    case 'April':
+    case 'May':
+    case 3:
+    case 4:
+    case 5:
+      return 'Spring';
+    case 'June':
+    case 'July':
+    case 'August':
+    case 6:
+    case 7:
+    case 8:
+      return 'Summer';
+    case 'Spetember':
+    case 'October':
+    case 'November':
+    case 9:
+    case 10:
+    case 11:
+      return 'Autumn';
+    default:
+      return 'Невідомий місяць';
+  }
+};
