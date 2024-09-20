@@ -20,12 +20,26 @@ while(умова_продовження) {
 //   alert('тіло циклу виконано');
 // }
 
-let counter = 0;
+// let counter = 0;
+// // debugger;
+// while (counter < 50) {
+//   // виконання тіла циклу називається ітерацією
+//   counter++;
+//   console.log(counter);
+// }
+
+// let counter = 0;
 // debugger;
-while (counter < 50) {
-  // виконання тіла циклу називається ітерацією
-  counter++;
-  console.log(counter);
+// while (true) {
+//   alert('iteration');
+//   if(counter++ > 3) {
+//     // зупиняє виконання циклу
+//     break;
+//   }
+// }
+
+let shouldContinue = true;
+while(shouldContinue) {
+  alert('iteration');
+  shouldContinue = confirm('Чи треба продовжувати?');
 }
-
-
