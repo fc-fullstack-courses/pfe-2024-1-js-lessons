@@ -1,7 +1,7 @@
 // умовні конструкції - конструкції коду які дозволяють
 // виконувати певні дії за певних умов
 
-console.log('блок коду 1');
+// console.log('блок коду 1');
 
 /*
   if ( умова ) {
@@ -20,10 +20,10 @@ let text = '';
 
 if (text) {
   // відбудется при правдивій умові
-  console.log('блок коду 2');
+  // console.log('блок коду 2');
 } else {
   // відбудется якщо всі умови були брехливими
-  console.log('блок коду 3');
+  // console.log('блок коду 3');
 }
 
 // let number = +prompt('Enter number');
@@ -92,7 +92,7 @@ const getUserPrompt1 = function () {
 // alert(greetingMessage);
 
 
-const userName = prompt('Введіть ваше ім`я');
+// const userName = prompt('Введіть ваше ім`я');
 
 // if(userName) {
 //   alert('Привіт, ' + userName);
@@ -100,4 +100,84 @@ const userName = prompt('Введіть ваше ім`я');
 //   alert('Привіт, гість');
 // }
 
-alert( userName ? 'Привіт, ' + userName : 'Привіт, гість' );
+// alert( userName ? 'Привіт, ' + userName : 'Привіт, гість' );
+
+// конструкція switch ... case
+/*
+  може бути зручною коли ви хочете виконати
+  певні дії виходячи з конкретнх значень
+  певної змінної або виразу
+
+
+  switch (змінна_або_вираз) {
+    case значення_А: {
+      // блок коду А
+    }
+    case значення_B: {
+      // блок коду B
+    }
+    default: {
+      // виконається якщо всі кейси зверху
+      // не підійдуть
+    }
+  }
+
+  порівняння проводитсья у вигляді 
+    змінна_або_вираз === значення_А 
+    для кожного кейсу до першої правди
+*/
+
+// let value = 1;
+
+// // debugger;
+// switch (value) {
+//   case 1: {
+//     alert('value прийняло значення 1');
+
+//     // зупиняє виконання світча після себе
+//     break;
+//   }
+//   case 2: {
+//     alert('value прийняло значення 2');
+//     break;
+//   }
+//   case 'test': {
+//     alert('value прийняло значення test');
+//     break;
+//   }
+//   default: {
+//     alert('Значення value не підтримується');
+//   }
+// }
+
+// let cardLevel = 'basic';
+
+const getCardCashbackPercenage = function (cardLevel) {
+  let cashbackPercentage;
+
+  switch (cardLevel) {
+    case 'basic': 
+    case 'basic+':
+    case 'basic++': {
+      cashbackPercentage = 1.2;
+      break;
+    }
+    case 'pro': {
+      cashbackPercentage = 1.5;
+      break;
+    }
+    case 'gold': {
+      cashbackPercentage = 2.5;
+      break;
+    }
+    case 'platinum': {
+      cashbackPercentage = 6;
+      break;
+    }
+    default: {
+      cashbackPercentage = 0;
+    }
+  }
+
+  return cashbackPercentage;
+}
