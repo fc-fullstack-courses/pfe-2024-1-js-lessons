@@ -38,8 +38,26 @@ while(умова_продовження) {
 //   }
 // }
 
-let shouldContinue = true;
-while(shouldContinue) {
-  alert('iteration');
-  shouldContinue = confirm('Чи треба продовжувати?');
+// let shouldContinue = true;
+// while(shouldContinue) {
+//   alert('iteration');
+//   shouldContinue = confirm('Чи треба продовжувати?');
+// }
+
+/*
+  за допомогою циклу виводити в консоль 
+  всі непарні числа від 0 до 10
+
+  1
+  3
+  5
+  7
+  9
+*/
+let counter1 = 0;
+while(counter1 < 10) {
+  if(counter1 % 2 !== 0) {
+    console.log(counter1);
+  }
+  counter1++;
 }
