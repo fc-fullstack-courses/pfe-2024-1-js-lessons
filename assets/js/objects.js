@@ -127,4 +127,16 @@ console.log(user);
 // }
 
 
-// Видалення значень (Delete)
+// Видалення значень об'єкта (Delete)
+// 1 через delete
+delete user.accountBalance;
+
+console.log(user);
+console.log(user.accountBalance);
+
+// 2 присвоєення undefined
+user.age = undefined;
+
+console.log(user);
+console.log(user.age);
+console.log(user.asgfdkfdhfvifbdsufs);
