@@ -55,12 +55,39 @@ while(умова_продовження) {
   9
 */
 // let counter1 = 0;
+// debugger;
 // while(counter1 < 10) {
 //   if(counter1 % 2 !== 0) {
 //     console.log(counter1);
 //   }
 //   counter1++;
 // }
+
+// let counter1 = 1;
+// debugger;
+// while(counter1 < 10) {
+//   if(counter1 % 2 !== 0) {
+//     console.log(counter1);
+//   }
+//   counter1 += 2;
+// }
+
+let count = 0;
+debugger;
+while(true) {
+  count++;
+  if(count % 2 === 0) {
+    // достроково переходить на нове коло (ітерацію)
+    continue;
+  }
+
+  if(count >= 10) {
+    break;
+  }
+
+  console.log(count);
+
+}
 
 // цикл do ... while
 /*
@@ -72,9 +99,9 @@ do {
 } while (умова)
 */
 
-let counter2 = 0;
-debugger;
-do {
-  alert('iteration');
-  counter2++;
-} while (1000000000 < 0);
+// let counter2 = 0;
+// debugger;
+// do {
+//   alert('iteration');
+//   counter2++;
+// } while (1000000000 < 0);
