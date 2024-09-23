@@ -12,12 +12,11 @@ const object1 = {
   // приклад властивості об'єкту
   // ключами можуть бути тільки рядки або символи
   // значеннями можуть бути будь-які типи даних
-  key1 : 'value 1',
-  key2 : 100,
-  key3 : true,
+  key1: 'value 1',
+  key2: 100,
+  key3: true,
   // метод - властивість об'єкта, значенням якої є функція
-  key4: function () {
-  }
+  key4: function () {},
 };
 
 const citramon = {
@@ -26,8 +25,8 @@ const citramon = {
   price: 150,
   isSoldFree: true,
   maxAmount: 20,
-  amount: 14
-}
+  amount: 14,
+};
 
 const phone = {
   brand: 'Samsung',
@@ -37,5 +36,26 @@ const phone = {
   color: 'red',
   callSomebody: function () {
     alert('дзвонимо комусь. Туту будуть гудки');
-  }
-}
+  },
+};
+
+// створення об'єктів (Create)
+const obj1 = {}; // найчастіше, літерал
+const obj2 = Object(); // рідко
+const obj3 = new Object(); // достатньо часто,
+// використовується при створенні об'єктів зі спефічною структурою
+
+const cat = {
+  name: 'Pushok',
+  furColor: 'white',
+  eyeColor: 'green',
+  breed: 'British',
+  isSleeping: false,
+  age: 3,
+};
+
+// зчитування об'єктів (Read)
+
+// Оновлення значень (Update)
+
+// Видалення значень (Delete)
