@@ -82,11 +82,11 @@ const user = {
 }
 
 // зчитування об'єктів (Read)
-console.log(user);
+// console.log(user);
 
 // alert(user); // приводить об'єкт до рядка що зазвичай є проблемою
 
-console.log(user + '');
+// console.log(user + '');
 
 // отримання даних з об'єкта
 // назваОб'єкта.назваВластивості
@@ -96,5 +96,35 @@ console.log( user.email );
 
 
 // Оновлення значень (Update)
+
+// let email = 'test@gmail.com';
+
+// email = 'test1@gmail.com';
+
+// let age = 40;
+
+// age += 2;
+
+// age++;
+
+user.email = 'johnDoe@gmail.com';
+console.log( user.email );
+
+user.age += 2;
+
+console.log( user.age );
+user.age++;
+console.log( user.age );
+
+// додавати нові властивіості до існуючого об'єкта
+
+user.accountBalance = 15000;
+
+console.log(user);
+
+// user = {
+
+// }
+
 
 // Видалення значень (Delete)
