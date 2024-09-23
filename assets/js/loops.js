@@ -72,22 +72,24 @@ while(умова_продовження) {
 //   counter1 += 2;
 // }
 
-let count = 0;
-debugger;
-while(true) {
-  count++;
-  if(count % 2 === 0) {
-    // достроково переходить на нове коло (ітерацію)
-    continue;
-  }
+// let count = 0;
+// debugger;
 
-  if(count >= 10) {
-    break;
-  }
+// while(true) {
+// let count = 0;
+//   count++;
+//   if(count % 2 === 0) {
+//     // достроково переходить на нове коло (ітерацію)
+//     continue;
+//   }
 
-  console.log(count);
+//   if(count >= 10) {
+//     break;
+//   }
 
-}
+//   console.log(count);
+
+// }
 
 // цикл do ... while
 /*
@@ -105,3 +107,24 @@ do {
 //   alert('iteration');
 //   counter2++;
 // } while (1000000000 < 0);
+
+// цикл for
+/*
+  for( зонаПочатку ;зонаУмови ; зонаКроку ) {
+    // тіло циклу
+  }
+
+  у зоніПочатку ви можете сторити внутрішні змінні для цього циклу
+  у зоніУмови ви пишете умову продовження циклу
+  у зоніКроку ви вказуєте дію або дії які треба зробити після кожної ітерації
+*/
+debugger;
+// for (let counter = 0, x = 'test'; counter < 10; counter++) {
+//   console.log(counter);
+// }
+// i, j ...
+// debugger;
+// безкінечна варіація for
+// for(;;) {
+//   alert('це буде повторюватися безкінечно');
+// }
