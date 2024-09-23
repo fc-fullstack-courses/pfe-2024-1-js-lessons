@@ -82,6 +82,18 @@ const user = {
 }
 
 // зчитування об'єктів (Read)
+console.log(user);
+
+// alert(user); // приводить об'єкт до рядка що зазвичай є проблемою
+
+console.log(user + '');
+
+// отримання даних з об'єкта
+// назваОб'єкта.назваВластивості
+console.log( user.email );
+
+// console.log( console );
+
 
 // Оновлення значень (Update)
 
