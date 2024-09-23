@@ -54,6 +54,33 @@ const cat = {
   age: 3,
 };
 
+/*
+  Створити об'єкт користувача (user)
+    у користувача мають бути наступні властивості:
+      ім'я
+      прізвище
+      вік
+      стать
+      електроннаПошта
+      пароль
+
+      Також додайте метод який буде імітувати харчування
+
+*/
+
+const user = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 42,
+  // gender: 'male',
+  isMale: true,
+  email: 'user@gmail.com',
+  password: 'jaisdi23234OIJD*3423',
+  eat: function () {
+    console.log('om-nom-nom');
+  }
+}
+
 // зчитування об'єктів (Read)
 
 // Оновлення значень (Update)
