@@ -90,8 +90,35 @@ const user = {
   password: 'jaisdi23234OIJD*3423',
   eat: function () {
     console.log('om-nom-nom');
+  },
+  getFullName: function () {
+    return this.firstName + " " + this.lastName;
   }
 }
+
+// const user2 = {
+//   firstName: 'Jane',
+//   lastName: 'Doe',
+//   age: 42,
+//   // gender: 'male',
+//   isMale: true,
+//   email: 'user@gmail.com',
+//   password: 'jaisdi23234OIJD*3423',
+//   eat: function () {
+//     console.log('om-nom-nom');
+//   },
+//   getFullName: function () {
+//     return this.firstName + " " + this.lastName;
+//   }
+// }
+
+
+/*
+  зробити користувачу метод
+  метод має повертати рядок який буде містити ім'я та прізвище цього користувача
+    наприклад : "John Doe"
+  усередині метода заборонено напряму звертитися до об'єкта користувача
+*/
 
 /*
   Створити функцію у синтаксисі function declaration
@@ -120,7 +147,7 @@ const testObj = {
   key2 : 10000,
   key3: false,
   test : function () {
-    debugger;
+    // debugger;
     // this у методах об'єктів напряму надає вам доступ до вашого об'єкту
     // (той, хто іде до останньої крапочки)
     console.log(this);
