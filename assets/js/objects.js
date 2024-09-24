@@ -217,3 +217,33 @@ user.age = undefined;
 console.log(user);
 console.log(user.age);
 console.log(user.asgfdkfdhfvifbdsufs);
+
+const video1 = {
+  title: 'Titan submersible is ...',
+  views: 866173,
+  author: 'BBC News'
+}
+
+const video2 = {
+  title: 'Title 2',
+  views: 155,
+  author: 'Test User'
+}
+
+const video3 = {
+  title: 'Title 3',
+  vievs: 454654847,
+  author: 'Test User 2'
+}
+
+const video4 = {
+  title: 'Title 3',
+  vievs: 454654847,
+  author: 'Test User 2'
+}
+
+const video5 = {
+  title: 'Title 5',
+  vievs: 12327,
+  author: 'Test User 5'
+}
