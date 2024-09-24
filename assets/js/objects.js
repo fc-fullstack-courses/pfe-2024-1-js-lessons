@@ -1,5 +1,5 @@
 // Об'єкти
-"use strict";
+'use strict';
 // приклад даних користувача
 // ПОГАНО
 const user1Name = 'testUser';
@@ -38,7 +38,7 @@ const phone = {
   // },
   price: {
     currency: 'UAH',
-    amount: 45000
+    amount: 45000,
   },
   isOn: true,
   color: 'red',
@@ -92,9 +92,9 @@ const user = {
     console.log('om-nom-nom');
   },
   getFullName: function () {
-    return this.firstName + " " + this.lastName;
-  }
-}
+    return this.firstName + ' ' + this.lastName;
+  },
+};
 
 // const user2 = {
 //   firstName: 'Jane',
@@ -112,7 +112,6 @@ const user = {
 //   }
 // }
 
-
 /*
   зробити користувачу метод
   метод має повертати рядок який буде містити ім'я та прізвище цього користувача
@@ -128,14 +127,14 @@ const user = {
   ім'я та прізвище має отримуватися з переданого об'єкта
 */
 
-function greetUser (userObj) {
-  return "Hello, " + userObj.firstName + " " + userObj.lastName + "!";
+function greetUser(userObj) {
+  return 'Hello, ' + userObj.firstName + ' ' + userObj.lastName + '!';
 }
 
 const greeting1 = greetUser(user);
 console.log(greeting1);
 
-function test1 () {
+function test1() {
   // this - контекст виконання функції (хто її запускає)
   console.log(this); // об'єкт Window (стандартно) || undefined (суворий режим)
 }
@@ -143,18 +142,18 @@ function test1 () {
 // test1();
 
 const testObj = {
-  key1 : 'value 1',
-  key2 : 10000,
+  key1: 'value 1',
+  key2: 10000,
   key3: false,
-  test : function () {
+  test: function () {
     // debugger;
     // this у методах об'єктів напряму надає вам доступ до вашого об'єкту
     // (той, хто іде до останньої крапочки)
     console.log(this);
     // console.log(testObj.key1); // погано
     console.log(this.key1); // добре
-  }
-}
+  },
+};
 
 testObj.test();
 
@@ -167,10 +166,9 @@ testObj.test();
 
 // отримання даних з об'єкта
 // назваОб'єкта.назваВластивості
-console.log( user.address );
+console.log(user.address);
 
 // console.log( console );
-
 
 // Оновлення значень (Update)
 
@@ -185,13 +183,13 @@ console.log( user.address );
 // age++;
 
 user.email = 'johnDoe@gmail.com';
-console.log( user.email );
+console.log(user.email);
 
 user.age += 2;
 
-console.log( user.age );
+console.log(user.age);
 user.age++;
-console.log( user.age );
+console.log(user.age);
 
 // додавати нові властивіості до існуючого об'єкта
 
@@ -202,7 +200,6 @@ console.log(user);
 // user = {
 
 // }
-
 
 // Видалення значень об'єкта (Delete)
 // 1 через delete
@@ -221,29 +218,84 @@ console.log(user.asgfdkfdhfvifbdsufs);
 const video1 = {
   title: 'Titan submersible is ...',
   views: 866173,
-  author: 'BBC News'
-}
+  author: 'BBC News',
+  addView: function () {
+    this.views++;
+  },
+};
 
 const video2 = {
   title: 'Title 2',
   views: 155,
-  author: 'Test User'
-}
+  author: 'Test User',
+  addView: function () {
+    this.views++;
+  },
+};
 
 const video3 = {
   title: 'Title 3',
   vievs: 454654847,
-  author: 'Test User 2'
-}
+  author: 'Test User 2',
+  addView: function () {
+    this.views++;
+  },
+};
 
 const video4 = {
   title: 'Title 3',
   vievs: 454654847,
-  author: 'Test User 2'
-}
+  author: 'Test User 2',
+  addView: function () {
+    this.views++;
+  },
+};
 
 const video5 = {
   title: 'Title 5',
   vievs: 12327,
-  author: 'Test User 5'
+  author: 'Test User 5',
+  addView: function () {
+    this.views++;
+  },
+};
+
+// Функції - конструктори
+// створюють об'єкт з певною структурою
+// function createVideoObject (title, views, author) {
+function Video(title, views, author) {
+  // debugger;
+  // const newVideoObject = {};
+
+  // newVideoObject.title = title;
+  // newVideoObject.views = views;
+  // newVideoObject.author = author;
+
+  // newVideoObject.addView = function () {
+  //   this.views++;
+  // }
+
+  // return newVideoObject;
+  
+  // this - для функцій запущених з new - пустий об'єкт завжди
+  // також повертається навіть якщо не писати return
+
+  this.title = title;
+  this.views = views;
+  this.author = author;
+
+  this.addView = function () {
+    this.views++;
+  };
+
+  // return newVideoObject;
 }
+
+
+// перевод функції в режим конструктора
+// this в цьому режимі буде пустим об'єктом з яким можна працювати
+// завжди повертає об'єкт
+// якщо в тілі функції повертається не об'єкт
+// то воно повертає об'єкт this
+const video6 = new Video('Funny cats compilation 10', 895552121, 'Me');
+const video7 = new Video('Funny cats compilation 11', 145, 'Me');
