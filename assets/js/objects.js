@@ -93,6 +93,21 @@ const user = {
   }
 }
 
+/*
+  Створити функцію у синтаксисі function declaration
+  вона має приймати об'єкт користувача
+  і має повертати рядок у форматі:
+  "Hello, John Doe!"
+  ім'я та прізвище має отримуватися з переданого об'єкта
+*/
+
+function greetUser (userObj) {
+  return "Hello, " + userObj.firstName + " " + userObj.lastName + "!";
+}
+
+const greeting1 = greetUser(user);
+console.log(greeting1);
+
 // зчитування об'єктів (Read)
 // console.log(user);
 
