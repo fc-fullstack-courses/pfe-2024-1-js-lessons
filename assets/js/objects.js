@@ -31,13 +31,25 @@ const citramon = {
 const phone = {
   brand: 'Samsung',
   model: 'Galaxy Note 25',
-  price: 45000,
+  // cpu: {
+  //   brand: 'Qualcom',
+  //   model: 'Snapdragon 860',
+  //   frequency: 4000
+  // },
+  price: {
+    currency: 'UAH',
+    amount: 45000
+  },
   isOn: true,
   color: 'red',
   callSomebody: function () {
     alert('дзвонимо комусь. Туту будуть гудки');
   },
 };
+
+console.log(phone.price.amount);
+console.log(phone.cpu); // undefined
+// console.log(phone.cpu.model); // error
 
 // створення об'єктів (Create)
 const obj1 = {}; // найчастіше, літерал
@@ -90,7 +102,7 @@ const user = {
 
 // отримання даних з об'єкта
 // назваОб'єкта.назваВластивості
-console.log( user.email );
+console.log( user.address );
 
 // console.log( console );
 
