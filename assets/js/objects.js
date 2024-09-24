@@ -108,6 +108,29 @@ function greetUser (userObj) {
 const greeting1 = greetUser(user);
 console.log(greeting1);
 
+function test1 () {
+  // this - контекст виконання функції (хто її запускає)
+  console.log(this); // об'єкт Window (стандартно) || undefined (суворий режим)
+}
+
+// test1();
+
+const testObj = {
+  key1 : 'value 1',
+  key2 : 10000,
+  key3: false,
+  test : function () {
+    debugger;
+    // this у методах об'єктів напряму надає вам доступ до вашого об'єкту
+    // (той, хто іде до останньої крапочки)
+    console.log(this);
+    // console.log(testObj.key1); // погано
+    console.log(this.key1); // добре
+  }
+}
+
+testObj.test();
+
 // зчитування об'єктів (Read)
 // console.log(user);
 
