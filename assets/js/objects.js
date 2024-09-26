@@ -47,8 +47,8 @@ const phone = {
   },
 };
 
-console.log(phone.price.amount);
-console.log(phone.cpu); // undefined
+// console.log(phone.price.amount);
+// console.log(phone.cpu); // undefined
 // console.log(phone.cpu.model); // error
 
 // створення об'єктів (Create)
@@ -132,7 +132,7 @@ function greetUser(userObj) {
 }
 
 const greeting1 = greetUser(user);
-console.log(greeting1);
+// console.log(greeting1);
 
 function test1() {
   // this - контекст виконання функції (хто її запускає)
@@ -155,7 +155,7 @@ const testObj = {
   },
 };
 
-testObj.test();
+// testObj.test();
 
 // зчитування об'єктів (Read)
 // console.log(user);
@@ -166,7 +166,7 @@ testObj.test();
 
 // отримання даних з об'єкта
 // назваОб'єкта.назваВластивості
-console.log(user.address);
+// console.log(user.address);
 
 // console.log( console );
 
@@ -183,19 +183,19 @@ console.log(user.address);
 // age++;
 
 user.email = 'johnDoe@gmail.com';
-console.log(user.email);
+// console.log(user.email);
 
 user.age += 2;
 
-console.log(user.age);
+// console.log(user.age);
 user.age++;
-console.log(user.age);
+// console.log(user.age);
 
 // додавати нові властивіості до існуючого об'єкта
 
 user.accountBalance = 15000;
 
-console.log(user);
+// console.log(user);
 
 // user = {
 
@@ -205,15 +205,15 @@ console.log(user);
 // 1 через delete
 delete user.accountBalance;
 
-console.log(user);
-console.log(user.accountBalance);
+// console.log(user);
+// console.log(user.accountBalance);
 
 // 2 присвоєення undefined
 user.age = undefined;
 
-console.log(user);
-console.log(user.age);
-console.log(user.asgfdkfdhfvifbdsufs);
+// console.log(user);
+// console.log(user.age);
+// console.log(user.asgfdkfdhfvifbdsufs);
 
 const video1 = {
   title: 'Titan submersible is ...',
@@ -276,7 +276,7 @@ function Video(title, views, author) {
   // }
 
   // return newVideoObject;
-  
+
   // this - для функцій запущених з new - пустий об'єкт завжди
   // також повертається навіть якщо не писати return
 
@@ -291,7 +291,6 @@ function Video(title, views, author) {
   // return newVideoObject;
 }
 
-
 // перевод функції в режим конструктора
 // this в цьому режимі буде пустим об'єктом з яким можна працювати
 // завжди повертає об'єкт
@@ -299,3 +298,48 @@ function Video(title, views, author) {
 // то воно повертає об'єкт this
 const video6 = new Video('Funny cats compilation 10', 895552121, 'Me');
 const video7 = new Video('Funny cats compilation 11', 145, 'Me');
+
+// особливості роботи з ключами
+//
+
+const testObject = {
+  key: 'value',
+  'key 1': 'test 1',
+  // key 2 : 'test 2',
+  3: 'value 3',
+  'obj 1' : {
+    0: true,
+    1: null,
+    2: 'test'
+  }
+};
+
+// console.log(testObject.key); // value
+// console.log(testObject.key 1); // error
+// console.log(testObject.'key 1'); // error
+// console.log(testObject.3); // error
+
+// оператор доступу до властивості об'єкта 
+// з обчисленням
+/*
+  obj[key]
+*/
+
+console.log(testObject['key']); // value
+console.log(testObject['key 1']); // test 1
+console.log(testObject[3]); // value 3
+console.log(testObject['3']); // value 3
+
+// const userInput = prompt('Enter some phone key');
+const userInput = 'brand';
+
+console.log(phone[userInput]);
+console.log(testObject['obj 1'][2]);
+console.log(phone.price['currency']);
+
+const key = prompt('Enter key');
+const value = prompt('Enter value');
+
+testObject[key] = value;
+
+console.log(testObject);
