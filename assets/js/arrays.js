@@ -67,3 +67,16 @@ arr5.push(null, {}, 67, undefined, 'bla-bla-bla');
 
 // повертає довжину масиву після вставки
 const newArr5Length = arr5.push(1500000);
+
+// видалення останнього елемента масиву
+const deletedValue = arr5.pop();
+
+const emptyArr = [];
+
+emptyArr.pop();
+emptyArr.pop();
+emptyArr.pop();
+emptyArr.pop();
+const popRes = emptyArr.pop();
+
+console.log(popRes); // undefined
