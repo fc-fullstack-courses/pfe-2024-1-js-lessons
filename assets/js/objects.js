@@ -307,11 +307,11 @@ const testObject = {
   'key 1': 'test 1',
   // key 2 : 'test 2',
   3: 'value 3',
-  'obj 1' : {
+  'obj 1': {
     0: true,
     1: null,
-    2: 'test'
-  }
+    2: 'test',
+  },
 };
 
 // console.log(testObject.key); // value
@@ -319,27 +319,70 @@ const testObject = {
 // console.log(testObject.'key 1'); // error
 // console.log(testObject.3); // error
 
-// оператор доступу до властивості об'єкта 
+// оператор доступу до властивості об'єкта
 // з обчисленням
 /*
   obj[key]
 */
 
-console.log(testObject['key']); // value
-console.log(testObject['key 1']); // test 1
-console.log(testObject[3]); // value 3
-console.log(testObject['3']); // value 3
+// console.log(testObject['key']); // value
+// console.log(testObject['key 1']); // test 1
+// console.log(testObject[3]); // value 3
+// console.log(testObject['3']); // value 3
 
-// const userInput = prompt('Enter some phone key');
-const userInput = 'brand';
+// // const userInput = prompt('Enter some phone key');
+// const userInput = 'brand';
 
-console.log(phone[userInput]);
-console.log(testObject['obj 1'][2]);
-console.log(phone.price['currency']);
+// console.log(phone[userInput]);
+// console.log(testObject['obj 1'][2]);
+// console.log(phone.price['currency']);
 
-const key = prompt('Enter key');
-const value = prompt('Enter value');
+// const key = prompt('Enter key');
+// const value = prompt('Enter value');
 
-testObject[key] = value;
+// testObject[key] = value;
 
-console.log(testObject);
+// console.log(testObject);
+
+// console.log(testObject[key], testObj['obj 1'], phone.isOn);
+
+// особливості порівняння об'єктів у JS
+const testStr1 = 'test string';
+const testStr2 = 'test string';
+const testStr3 = 'teststring';
+
+console.log(testStr1 === testStr2); // true
+console.log(testStr1 === testStr3); // false
+
+const testObj1 = {
+  firstName: 'John',
+};
+
+const testObj2 = {
+  firstName: 'Jane',
+};
+
+const testObj3 = {
+  firstName: 'Jane',
+};
+
+console.log(testObj1 === testObj2); // false
+console.log(testObj2 === testObj3); // false
+console.log(testObj2 === testObj2); // true
+
+const testObj4 = testObj2;
+console.log(testObj2 === testObj4); // true
+
+testObj4.lastName = 'Test';
+
+console.log(testObj4);
+console.log(testObj2);
+
+function changeObject (obj) {
+
+  obj.newProperty = 'we changed object';
+
+  return obj;
+}
+
+const testObj5 = changeObject(testObj4);
