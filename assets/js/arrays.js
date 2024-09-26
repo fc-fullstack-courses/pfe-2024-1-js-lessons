@@ -27,10 +27,30 @@ const vipEmails = new Array(
   'asdn4232@hotmail.com'
 );
 
-console.log(typeof vipEmails); // object
-console.log(vipEmails);
+// console.log(typeof vipEmails); // object
+// console.log(vipEmails);
 // довжина масива
-console.log(vipEmails.length); 
+// console.log(vipEmails.length);
 
 // елемент з індексом 2
-console.log(vipEmails[2]); // 'ahfddf443@gmail.com'
+// console.log(vipEmails[2]); // 'ahfddf443@gmail.com'
+
+// створення масивів
+
+// 1. Через конструктор
+// пустий масив
+const arr1 = new Array();
+
+// масив з якимись елементами
+const arr2 = new Array(50, 515, 8478, 4456);
+
+// пустий масив з певною довжиною
+const arr3 = new Array(5);
+
+// 2. Через літерал
+// пустий масив
+const arr4 = [];
+
+// масив з якимись елементами
+const arr5 = [50, 515, 8478, 4456];
+
