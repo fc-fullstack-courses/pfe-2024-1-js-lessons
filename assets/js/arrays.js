@@ -54,3 +54,16 @@ const arr4 = [];
 // масив з якимись елементами
 const arr5 = [50, 515, 8478, 4456];
 
+console.log(arr5[2]);
+
+arr5[4] = Infinity;
+
+// arr5[7] = NaN;
+
+// додавання елементів у кінець масиву
+arr5.push('first');
+
+arr5.push(null, {}, 67, undefined, 'bla-bla-bla');
+
+// повертає довжину масиву після вставки
+const newArr5Length = arr5.push(1500000);
