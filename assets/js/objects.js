@@ -378,8 +378,7 @@ testObj4.lastName = 'Test';
 console.log(testObj4);
 console.log(testObj2);
 
-function changeObject (obj) {
-
+function changeObject(obj) {
   obj.newProperty = 'we changed object';
 
   return obj;
