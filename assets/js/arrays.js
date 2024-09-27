@@ -111,7 +111,7 @@ const deletedName = names.pop();
 // console.log(arr5);
 
 arr5.unshift({
-  test: true
+  test: true,
 });
 
 // console.log(arr5);
@@ -123,7 +123,6 @@ arr5.unshift(-1000, 'test 1235', null);
 // додати на початок масиву з іменами 2 імені
 // стірі імена при цьому не мають зникнути
 names.unshift('Test', 'User');
-
 
 // видалення першого елементу масиву
 const previousFirstElem = arr5.shift();
@@ -144,7 +143,6 @@ const previousFirstElem = arr5.shift();
 const deletedItemsArr = arr5.splice(-3, 1, 'splice sent me', 'hello there');
 // console.log(arr5);
 // console.log(deletedItemsArr);
-
 
 // копіювання частини масиву у новий масив
 /*
@@ -188,6 +186,24 @@ reverseArr.reverse();
 const names2 = ['Kyrylo', 'Anton', 'Olena', 'Anna'];
 
 const isOlenaInArray = names2.includes('Olena');
-console.log(isOlenaInArray);
+// console.log(isOlenaInArray);
 const isPetroInArray = names2.includes('Petro');
-console.log(isPetroInArray);
+// console.log(isPetroInArray);
+
+// flat
+// створює масив всередені якого розрівнює вкладені масиви
+// на вказану кількість рівнів
+const onionArr = [
+  'first',
+  'second',
+  [100, 200, 300],
+  'test',
+  [true, true, false, ['deep stuff'], false],
+];
+
+console.log( onionArr[4][3][0] );
+const flatted1 = onionArr.flat(1);
+
+const flatted2 = onionArr.flat(10);
+
+const flatted3 = onionArr.flat(Infinity);
