@@ -106,3 +106,18 @@ console.log(names);
 const deletedName = names.pop();
 console.log(deletedName);
 console.log(names);
+
+// додавання елементів у початок масиву
+console.log(arr5);
+
+arr5.unshift({
+  test: true
+});
+
+console.log(arr5);
+
+arr5.unshift(-1000, 'test 1235', null);
+
+console.log(arr5);
+
+
