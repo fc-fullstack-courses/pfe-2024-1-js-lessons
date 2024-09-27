@@ -144,3 +144,23 @@ console.log(arr5);
 const deletedItemsArr = arr5.splice(-3, 1, 'splice sent me', 'hello there');
 console.log(arr5);
 console.log(deletedItemsArr);
+
+
+// копіювання частини масиву у новий масив
+/*
+  перший параметр - вказує початковий індекс
+  другий параметр - вказує перед яким індексом треба зупинитися
+*/
+const copy1 = arr5.slice(3, 7);
+// повна копія масиву
+const copy2 = arr5.slice();
+// копіює від 3 індексу до кінця
+const copy3 = arr5.slice(3);
+// негатівні індексу теж працюють
+const copy4 = arr5.slice(-4, -2);
+const copy5 = arr5.slice(-4, 2);
+
+const copy6 = arr5.slice(1, 5);
+
+copy6[1].newProp = 'wifi';
+console.log(copy6[1] === arr5[2]);
