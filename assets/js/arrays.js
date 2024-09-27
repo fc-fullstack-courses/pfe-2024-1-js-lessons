@@ -129,3 +129,6 @@ names.unshift('Test', 'User');
 const previousFirstElem = arr5.shift();
 console.log(arr5);
 console.log(previousFirstElem);
+
+// видалити перше ім'я з масиву та покажіть його у консолі
+console.log(names.shift());
