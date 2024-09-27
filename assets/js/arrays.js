@@ -88,3 +88,16 @@ console.log(popRes); // undefined
   3. з цього масиву видалити останнє ім'я 
       та вивести його у консоль
 */
+const names = ['Anton', 'Olesya', 'Anna', 'Petro'];
+
+// 1
+names.push('John');
+console.log(names);
+// 2
+names.push('Jane', 'Joshua');
+console.log(names);
+
+// 3
+const deletedName = names.pop();
+console.log(deletedName);
+console.log(names);
