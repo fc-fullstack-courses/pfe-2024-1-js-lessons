@@ -201,9 +201,20 @@ const onionArr = [
   [true, true, false, ['deep stuff'], false],
 ];
 
-console.log( onionArr[4][3][0] );
+// console.log(onionArr[4][3][0]);
 const flatted1 = onionArr.flat(1);
 
 const flatted2 = onionArr.flat(10);
 
 const flatted3 = onionArr.flat(Infinity);
+
+// concat
+/*
+  повертає новий масив, який формується зі старого масиву
+  + всі параметри методу concat
+*/
+const nums1 = [1, 2, 3, 4, 5];
+
+const nums2 = nums1.concat(100, 200, 300);
+
+const nums3 = nums1.concat(100,200,300, [1000,2000, [10000]]);
