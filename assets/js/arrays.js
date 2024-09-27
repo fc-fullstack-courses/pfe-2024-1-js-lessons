@@ -164,3 +164,15 @@ const copy6 = arr5.slice(1, 5);
 
 copy6[1].newProp = 'wifi';
 console.log(copy6[1] === arr5[2]);
+
+// метод join
+/*
+  перетворює масив на рядок
+  елементи розмежуються або комами або 
+  рядком який передали як параметр
+*/
+
+const joinTest = ['Name 1', 'Name 2', true, 1000];
+
+const stringFromArr = joinTest.join();
+const stringFromArr2 = joinTest.join('===');
