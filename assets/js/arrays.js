@@ -123,3 +123,9 @@ console.log(arr5);
 // додати на початок масиву з іменами 2 імені
 // стірі імена при цьому не мають зникнути
 names.unshift('Test', 'User');
+
+
+// видалення першого елементу масиву
+const previousFirstElem = arr5.shift();
+console.log(arr5);
+console.log(previousFirstElem);
