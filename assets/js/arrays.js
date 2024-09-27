@@ -176,3 +176,10 @@ const joinTest = ['Name 1', 'Name 2', true, 1000];
 
 const stringFromArr = joinTest.join();
 const stringFromArr2 = joinTest.join('===');
+
+// обертання елементів у масиві
+const reverseArr = [100, 5000, -2.5, 15];
+
+console.log(reverseArr);
+reverseArr.reverse();
+console.log(reverseArr);
