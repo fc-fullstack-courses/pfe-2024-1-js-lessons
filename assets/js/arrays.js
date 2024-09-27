@@ -27,7 +27,12 @@ const vipEmails = new Array(
   'asdn4232@hotmail.com'
 );
 
-// console.log(typeof vipEmails); // object
+console.log(typeof vipEmails); // object
+
+// перевірка чи є об'єкт масивом
+const isVipEmailsArray = Array.isArray(vipEmails);
+console.log(isVipEmailsArray);
+
 // console.log(vipEmails);
 // довжина масива
 // console.log(vipEmails.length);
