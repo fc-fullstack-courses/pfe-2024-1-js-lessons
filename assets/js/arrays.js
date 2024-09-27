@@ -180,6 +180,14 @@ const stringFromArr2 = joinTest.join('===');
 // обертання елементів у масиві
 const reverseArr = [100, 5000, -2.5, 15];
 
-console.log(reverseArr);
+// console.log(reverseArr);
 reverseArr.reverse();
-console.log(reverseArr);
+// console.log(reverseArr);
+
+// includes - перевіряє чи є якийсь елемент у масиві
+const names2 = ['Kyrylo', 'Anton', 'Olena', 'Anna'];
+
+const isOlenaInArray = names2.includes('Olena');
+console.log(isOlenaInArray);
+const isPetroInArray = names2.includes('Petro');
+console.log(isPetroInArray);
