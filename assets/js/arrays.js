@@ -218,3 +218,19 @@ const nums1 = [1, 2, 3, 4, 5];
 const nums2 = nums1.concat(100, 200, 300);
 
 const nums3 = nums1.concat(100,200,300, [1000,2000, [10000]]);
+
+/*
+  мутуючі методи:
+    push
+    pop
+    unshift
+    shift
+    splice
+    reverse
+  немутуючи методи:
+    includes
+    join
+    slice
+    flat
+    concat
+*/
