@@ -233,6 +233,7 @@ const nums3 = nums1.concat(100, 200, 300, [1000, 2000, [10000]]);
     slice
     flat
     concat
+    map
 */
 
 /*
@@ -274,7 +275,30 @@ const forEachTestArray = [100, 200, 300, 400];
 // forEachTestArray.forEach(forEachCallbackExample);
 
 forEachTestArray.forEach(function (number, i, array) {
-  console.log(number);
-  console.log(i);
-  console.log(array);
+  // console.log(number);
+  // console.log(i);
+  // console.log(array);
 });
+
+// map - на основі результатів роботи коллбек-функції
+// та старого масиву створює новий масив
+
+const numbers = [1,2,3,4,5,6,7,8];
+
+// const newArray = [];
+
+// numbers.forEach(function (number) {
+//   newArray.push(number * number);
+// });
+
+// console.log(newArray);
+
+const squaredNumbers = numbers.map(function (number, i) {
+  // конкретний результат роботи коллбеку буде кластися у новий масив на поточний індекс 
+  // на якому зараз знаходится обхід 
+  console.log(number * number);
+  console.log(i);
+  return number * number;
+});
+
+console.log(squaredNumbers);
