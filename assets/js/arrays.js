@@ -283,7 +283,7 @@ forEachTestArray.forEach(function (number, i, array) {
 // map - на основі результатів роботи коллбек-функції
 // та старого масиву створює новий масив
 
-const numbers = [1,2,3,4,5,6,7,8];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // const newArray = [];
 
@@ -294,8 +294,8 @@ const numbers = [1,2,3,4,5,6,7,8];
 // console.log(newArray);
 
 const squaredNumbers = numbers.map(function (number, i) {
-  // конкретний результат роботи коллбеку буде кластися у новий масив на поточний індекс 
-  // на якому зараз знаходится обхід 
+  // конкретний результат роботи коллбеку буде кластися у новий масив на поточний індекс
+  // на якому зараз знаходится обхід
   // console.log(number * number);
   // console.log(i);
   return number * number;
@@ -304,7 +304,7 @@ const squaredNumbers = numbers.map(function (number, i) {
 // console.log(squaredNumbers);
 
 // filter - створює новий масив, та заповнює його елементами, які пройшли
-// перевірку (повернули правдиве значення) при виклику для них коллбека 
+// перевірку (повернули правдиве значення) при виклику для них коллбека
 
 const oddNumbers = numbers.filter(function (number) {
   // if(number % 2 !== 0) {
@@ -317,4 +317,34 @@ const oddNumbers = numbers.filter(function (number) {
   return number % 2 !== 0;
 });
 
-console.log(oddNumbers);
+// console.log(oddNumbers);
+
+// some - повертає правду якщо хоч один з елементів масиву пройшов
+// перевірку у коллбкеці (коллбек повернув правду). повертає брехню інакше
+
+const numbers2 = [1, 3, 2.5, 7, 9.99, 10.00001, 5];
+
+const isThereEvenNumbers = numbers2.some(function (number) {
+  // if(number % 2 === 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  return number % 2 === 0;
+});
+
+console.log(isThereEvenNumbers);
+
+// every - повертає правду якщо всі елементи масиву пройшли
+// перевірку у коллбкеці (коллбек повернув правду). повертає брехню інакше
+
+const isAllNumbersOdd = numbers2.every(function (number) {
+  // if(number % 2 !== 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  return number % 2 !== 0;
+});
+
+console.log(isAllNumbersOdd);
