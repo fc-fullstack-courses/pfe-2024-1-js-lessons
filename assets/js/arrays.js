@@ -296,9 +296,25 @@ const numbers = [1,2,3,4,5,6,7,8];
 const squaredNumbers = numbers.map(function (number, i) {
   // конкретний результат роботи коллбеку буде кластися у новий масив на поточний індекс 
   // на якому зараз знаходится обхід 
-  console.log(number * number);
-  console.log(i);
+  // console.log(number * number);
+  // console.log(i);
   return number * number;
 });
 
-console.log(squaredNumbers);
+// console.log(squaredNumbers);
+
+// filter - створює новий масив, та заповнює його елементами, які пройшли
+// перевірку (повернули правдиве значення) при виклику для них коллбека 
+
+const oddNumbers = numbers.filter(function (number) {
+  // if(number % 2 !== 0) {
+  //   // елемент опинится у новому масиві
+  //   return true;
+  // } else {
+  //   // елемента не буде у новому масиві
+  //   return false;
+  // }
+  return number % 2 !== 0;
+});
+
+console.log(oddNumbers);
