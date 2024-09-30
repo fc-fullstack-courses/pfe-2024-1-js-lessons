@@ -333,7 +333,7 @@ const isThereEvenNumbers = numbers2.some(function (number) {
   return number % 2 === 0;
 });
 
-console.log(isThereEvenNumbers);
+// console.log(isThereEvenNumbers);
 
 // every - повертає правду якщо всі елементи масиву пройшли
 // перевірку у коллбкеці (коллбек повернув правду). повертає брехню інакше
@@ -347,4 +347,38 @@ const isAllNumbersOdd = numbers2.every(function (number) {
   return number % 2 !== 0;
 });
 
-console.log(isAllNumbersOdd);
+// console.log(isAllNumbersOdd);
+
+// find - повертає перший елемент, який пройшов перевірку з коллбеку
+// якщо жоден елемент не пройде перевірку повертає undefined
+
+const numbers3 = [1, 4, 5, 7, 100, 10, -5 , 12, 4, 9];
+
+const negativeNumber = numbers3.find(function (number) {
+  // if(number < 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
+  return number < 0;
+}); 
+
+console.log(negativeNumber);
+
+// findIndex - повертає перший індекс елементу, який пройшов перевірку з коллбеку
+// якщо жоден елемент не пройде перевірку повертає -1
+
+const names3 = ['Anton', 'User', 'Oksana', 'Petro', 'Dmytro', 'John', 'Oksana'];
+
+const oksanaIndex = names3.findIndex(function (name) {
+  return name === 'Oksana';
+});
+
+const janeIndex = names3.findIndex(function (name) {
+  return name === 'Jane';
+});
+
+
+console.log(oksanaIndex);
+
+console.log(janeIndex);
