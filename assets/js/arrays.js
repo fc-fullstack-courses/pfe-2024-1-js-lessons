@@ -217,7 +217,7 @@ const nums1 = [1, 2, 3, 4, 5];
 
 const nums2 = nums1.concat(100, 200, 300);
 
-const nums3 = nums1.concat(100,200,300, [1000,2000, [10000]]);
+const nums3 = nums1.concat(100, 200, 300, [1000, 2000, [10000]]);
 
 /*
   мутуючі методи:
@@ -234,3 +234,47 @@ const nums3 = nums1.concat(100,200,300, [1000,2000, [10000]]);
     flat
     concat
 */
+
+/*
+  Методи обходу масиву
+
+    завжди обходять масив з початку до кінця
+    кожен з методів обходу буде приймати спеціальну функцію, яку називають
+    callback (функція зворотнього виклику)
+*/
+
+// function printSomeData (printFunction, dataToPrint) {
+//   printFunction(dataToPrint);
+// }
+
+// debugger;
+// printSomeData(alert, 'test');
+// printSomeData(console.log, 'test');
+
+// forEach - виконую функцію-коллбек для кожного елемента у масиві
+/*
+    function callback (currentValue, index, array) {
+      currentValue - поточний елемент масиву
+      index - індекс поточного елементу масиву
+      array - посилання на масив по якому ви робити обхід
+    }
+*/
+
+const forEachTestArray = [100, 200, 300, 400];
+
+// function forEachCallbackExample (currentValue, index, array) {
+//   console.log('current value is:');
+//   console.log(currentValue);
+//   console.log('index value is:');
+//   console.log(index);
+//   console.log('array value is:');
+//   console.log(array);
+// }
+
+// forEachTestArray.forEach(forEachCallbackExample);
+
+forEachTestArray.forEach(function (number, i, array) {
+  console.log(number);
+  console.log(i);
+  console.log(array);
+});
