@@ -260,6 +260,13 @@ const video5 = {
   },
 };
 
+// function addView () {
+//   this; // undefined || Window
+// }
+
+// video5.addView();
+// addView();
+
 // Функції - конструктори
 // створюють об'єкт з певною структурою
 // function createVideoObject (title, views, author) {
@@ -351,8 +358,8 @@ const testStr1 = 'test string';
 const testStr2 = 'test string';
 const testStr3 = 'teststring';
 
-console.log(testStr1 === testStr2); // true
-console.log(testStr1 === testStr3); // false
+// console.log(testStr1 === testStr2); // true
+// console.log(testStr1 === testStr3); // false
 
 const testObj1 = {
   firstName: 'John',
@@ -366,17 +373,17 @@ const testObj3 = {
   firstName: 'Jane',
 };
 
-console.log(testObj1 === testObj2); // false
-console.log(testObj2 === testObj3); // false
-console.log(testObj2 === testObj2); // true
+// console.log(testObj1 === testObj2); // false
+// console.log(testObj2 === testObj3); // false
+// console.log(testObj2 === testObj2); // true
 
 const testObj4 = testObj2;
-console.log(testObj2 === testObj4); // true
+// console.log(testObj2 === testObj4); // true
 
 testObj4.lastName = 'Test';
 
-console.log(testObj4);
-console.log(testObj2);
+// console.log(testObj4);
+// console.log(testObj2);
 
 function changeObject(obj) {
   obj.newProperty = 'we changed object';
@@ -385,3 +392,4 @@ function changeObject(obj) {
 }
 
 const testObj5 = changeObject(testObj4);
+
