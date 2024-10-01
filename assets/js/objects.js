@@ -487,14 +487,26 @@ const dog = {
   name: 'Bulldog'
 }
 
+const parrot = {
+  name: 'Kesha'
+}
+
 const animalPrototype = {
   sleep: function () {
     console.log(this.name + ' is sleeping');
   }
 }
 
+const birdPrototype = {
+  fly: function () {
+    console.log(this.name + ' is flying');
+  }
+}
+
 mouse.__proto__ = animalPrototype;
 dog.__proto__ = animalPrototype;
+parrot.__proto__ = birdPrototype;
+birdPrototype.__proto__ = animalPrototype;
 
-mouse.sleep();
-dog.sleep();
+// mouse.sleep();
+// dog.sleep();
