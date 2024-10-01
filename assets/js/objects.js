@@ -393,3 +393,67 @@ function changeObject(obj) {
 
 const testObj5 = changeObject(testObj4);
 
+const message1 = {
+  id: 0,
+  author: 'User Userenko',
+  messageText: 'Lorem Ipsum ...',
+  likes: 0,
+  dislikes: 0,
+  addLike: function () {
+    this.likes++;
+  },
+  addDislike: function () {
+    this.dislikes++;
+  },
+  removeLike: function () {
+    this.likes--;
+  }
+}
+
+const message2 = {
+  id: 1,
+  author: 'Test Doe',
+  messageText: 'Bla Bla Bla.',
+  likes: 10,
+  dislikes: 3,
+  addLike: function () {
+    this.likes++;
+  },
+  addDislike: function () {
+    this.dislikes++;
+  },
+  removeLike: function () {
+    this.likes--;
+  }
+}
+
+// console.log(message1.addDislike === message2.addDislike); // false
+
+const arr1 = [];
+const arr2 = [null];
+
+// console.log(arr1.push === arr2.push); // true
+
+// Прототипи
+
+/*
+  Прототип - спеціальний об'єкт, який зберігає певні властивості та методи
+  які мають бути спільними для ваших об'єктів.
+*/
+
+const messagePrototype = {
+  removeDislike: function () {
+    console.log('dislike removed');
+  },
+  test: function () {
+    return 10;
+  }
+}
+
+// додаємо прототип об'єкту
+message1.__proto__ = messagePrototype;
+message2.__proto__ = messagePrototype;
+
+console.log(message2.removeDislike === message1.removeDislike) // true
+console.log(message1.__proto__ === message2.__proto__); // true
+// message1.removeDislike();
