@@ -444,13 +444,14 @@ const messagePrototype = {
     this.likes--;
   },
   removeDislike: function () {
-    console.log('dislike removed');
+    this.dislikes--;
+    // console.log('dislike removed');
   },
-  test: function () {
-    console.log('this value is:');
-    console.log(this);
-    return 10;
-  }
+  // test: function () {
+  //   console.log('this value is:');
+  //   console.log(this);
+  //   return 10;
+  // }
 }
 
 // додаємо прототип об'єкту
@@ -510,3 +511,23 @@ birdPrototype.__proto__ = animalPrototype;
 
 // mouse.sleep();
 // dog.sleep();
+
+
+let currentId = 0;
+
+function Message(author, messageText) {
+  this.id = currentId++;
+  this.author = author;
+  this.messageText = messageText;
+  this.likes = 0;
+  this.dislikes = 0;
+
+  // технічно працює але можна по іншому для конструкторів
+  // this.__proto__ = messagePrototype;
+}
+
+// задавання прототипу для функції - конструктора
+Message.prototype = messagePrototype;
+
+const msg1 = new Message('Anonymous', 'Hello world');
+const msg2 = new Message('User Test', 'test test text ...');
