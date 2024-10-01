@@ -457,3 +457,33 @@ message2.__proto__ = messagePrototype;
 console.log(message2.removeDislike === message1.removeDislike) // true
 console.log(message1.__proto__ === message2.__proto__); // true
 // message1.removeDislike();
+
+/*
+  Створити 2 об'єкти ріних видів твринок (котик та собака)
+    у кожного об'єкту тваринки буде її ім'я (як властивість)
+
+  Створити об'єкт - прототип animal 
+    у нього має бути метод, який консоль логом імітує сон
+
+  додати тваринкам прототип animal і виконати метод сну
+*/
+
+const mouse = {
+  name: 'Jerry'
+}
+
+const dog = {
+  name: 'Bulldog'
+}
+
+const animalPrototype = {
+  sleep: function () {
+    console.log('animal is sleeping');
+  }
+}
+
+mouse.__proto__ = animalPrototype;
+dog.__proto__ = animalPrototype;
+
+mouse.sleep();
+dog.sleep();
