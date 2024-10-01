@@ -399,15 +399,15 @@ const message1 = {
   messageText: 'Lorem Ipsum ...',
   likes: 0,
   dislikes: 0,
-  addLike: function () {
-    this.likes++;
-  },
-  addDislike: function () {
-    this.dislikes++;
-  },
-  removeLike: function () {
-    this.likes--;
-  }
+  // addLike: function () {
+  //   this.likes++;
+  // },
+  // addDislike: function () {
+  //   this.dislikes++;
+  // },
+  // removeLike: function () {
+  //   this.likes--;
+  // }
 }
 
 const message2 = {
@@ -416,15 +416,7 @@ const message2 = {
   messageText: 'Bla Bla Bla.',
   likes: 10,
   dislikes: 3,
-  addLike: function () {
-    this.likes++;
-  },
-  addDislike: function () {
-    this.dislikes++;
-  },
-  removeLike: function () {
-    this.likes--;
-  }
+  
 }
 
 // console.log(message1.addDislike === message2.addDislike); // false
@@ -442,10 +434,21 @@ const arr2 = [null];
 */
 
 const messagePrototype = {
+  addLike: function () {
+    this.likes++;
+  },
+  addDislike: function () {
+    this.dislikes++;
+  },
+  removeLike: function () {
+    this.likes--;
+  },
   removeDislike: function () {
     console.log('dislike removed');
   },
   test: function () {
+    console.log('this value is:');
+    console.log(this);
     return 10;
   }
 }
@@ -454,8 +457,12 @@ const messagePrototype = {
 message1.__proto__ = messagePrototype;
 message2.__proto__ = messagePrototype;
 
-console.log(message2.removeDislike === message1.removeDislike) // true
-console.log(message1.__proto__ === message2.__proto__); // true
+// message1.test();
+// message2.test();
+// messagePrototype.test();
+
+// console.log(message2.removeDislike === message1.removeDislike) // true
+// console.log(message1.__proto__ === message2.__proto__); // true
 // message1.removeDislike();
 
 /*
@@ -466,6 +473,10 @@ console.log(message1.__proto__ === message2.__proto__); // true
     у нього має бути метод, який консоль логом імітує сон
 
   додати тваринкам прототип animal і виконати метод сну
+
+  переробити метод сну таким чином щоб він виводив рядок виду:
+
+    ім'яТваринки спить
 */
 
 const mouse = {
@@ -478,7 +489,7 @@ const dog = {
 
 const animalPrototype = {
   sleep: function () {
-    console.log('animal is sleeping');
+    console.log(this.name + ' is sleeping');
   }
 }
 
