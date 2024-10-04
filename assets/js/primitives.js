@@ -132,3 +132,10 @@ console.log(str.length); // 19
 console.log(str[2]); // 'i'
 
 // str[2] = 'I'; // error
+
+// charAt - повертає символ на вказаному інексу в рядку
+const symbol1 = str.charAt(2); // 'i'
+
+// charCodeAt - повертає Юнікодівське значення символа на вказаному інексу в рядку
+const unicodeNum1 = str.charCodeAt(2); // 105
+
