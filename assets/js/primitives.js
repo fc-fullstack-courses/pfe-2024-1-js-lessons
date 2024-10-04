@@ -128,8 +128,8 @@ const objStr = new String('this is test string');
 
 const str = 'this is test string';
 
-console.log(str.length); // 19
-console.log(str[2]); // 'i'
+// console.log(str.length); // 19
+// console.log(str[2]); // 'i'
 
 // str[2] = 'I'; // error
 
@@ -184,3 +184,32 @@ const arr3 = str2.split(''); // ['T', 'e', 's', 't', ' ', 'S', 't', 'r', 'I', 'N
 arr3[2] = 'S';
 
 const str3 = arr3.join('');
+/*
+  створити функцію яка приймає рядок тексту
+  і повертає рядок в якому кожен символ випадково 
+  стає або верхнім або нижнім регістрі
+
+  'My STRing' -> 'my sTrInG'
+  'My STRing' -> 'MY StrINg'
+*/
+
+function toRandomCase (str) {
+  // debugger;
+  let resultString = '';
+
+  for(let i = 0; i < str.length; i++) {
+    let letter = str[i];
+    // console.log(letter);
+
+    // resultString = resultString + letter;
+    if(Math.random() > 0.5) {
+      resultString += letter.toUpperCase();
+    } else {
+      resultString += letter.toLowerCase();
+    }
+  }
+
+  return resultString;
+}
+
+const res1 = toRandomCase('My STRing');
