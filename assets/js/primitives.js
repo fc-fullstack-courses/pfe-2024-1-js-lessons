@@ -110,3 +110,14 @@ const boolValue = true;
 
 console.log(true.toString());
 console.log(boolValue.toString());
+
+// Number
+const num1 = 15.51;
+console.log(num1.toExponential()); // '1.551e+1'
+console.log(num1.toExponential(1)); // '1.6e+1'
+
+console.log(num1.toFixed()); // '16'
+console.log(num1.toFixed(1)); // '15.5'
+
+console.log(num1.toPrecision()); // '15.51'
+console.log(num1.toPrecision(1)); // '2e+1'
