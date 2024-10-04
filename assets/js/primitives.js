@@ -157,3 +157,7 @@ const testIndex3 = str.indexOf('test', testIndex + 1); // -1
 // slice - робить копію частини рядка
 const copy1 = str.slice(0,5);
 const copy2 = str.slice(0,-5);
+
+// trim - створює новий рядок в якому пробіли з початку та кінця видаляються
+const untrimmedStr = '                               John       Doe          ';
+const trimmedStr = untrimmedStr.trim();
