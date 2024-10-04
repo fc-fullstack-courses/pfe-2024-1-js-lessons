@@ -149,3 +149,11 @@ const includes1 = str.includes('test'); // true
 const includes2 = str.includes('szkjhgbfdsiluvhivb'); // false
 const includes3 = str.includes('TEST'); // false
 
+// indexOf - повертає індекс першого входження рядока-аргумента у рядку, у якого метод викликали
+const testIndex = str.indexOf('test'); // 8
+const testIndex2 = str.indexOf('szkjhgbfdsiluvhivb'); // -1
+const testIndex3 = str.indexOf('test', testIndex + 1); // -1
+
+// slice - робить копію частини рядка
+const copy1 = str.slice(0,5);
+const copy2 = str.slice(0,-5);
