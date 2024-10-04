@@ -139,3 +139,13 @@ const symbol1 = str.charAt(2); // 'i'
 // charCodeAt - повертає Юнікодівське значення символа на вказаному інексу в рядку
 const unicodeNum1 = str.charCodeAt(2); // 105
 
+// concat - повертає новий рядок, в якому до старого 
+// приєднються (конкатенуються) аргументи конкату (зазвичай рядки)
+// str + ' CONCAT ' + 10 + '!!!';
+const concatStr = str.concat(' CONCAT ', 10, '!!!');
+
+// includes - відповідає чи входить рядок-аргумент у склад ряда у якого викликаємо метод
+const includes1 = str.includes('test'); // true
+const includes2 = str.includes('szkjhgbfdsiluvhivb'); // false
+const includes3 = str.includes('TEST'); // false
+
