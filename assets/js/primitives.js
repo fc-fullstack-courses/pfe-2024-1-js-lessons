@@ -103,3 +103,10 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+// Методи примітивів
+// Boolean
+console.log(true);
+const boolValue = true;
+
+console.log(true.toString());
+console.log(boolValue.toString());
