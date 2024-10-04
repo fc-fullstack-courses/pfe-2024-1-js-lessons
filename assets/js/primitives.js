@@ -173,3 +173,14 @@ const upperCase = str2.toUpperCase(); // 'TEST STRING'
 // replace - створює новий рядок в якому заміщуює перше входження одного рядка іншим
 const replace1 = str2.replace('est', 'EST 123 '); // 'TEST 123  StrING'
 const replace2 = str2.replace('t', 'EST 123 '); // 'TesEST 123  StrING'
+
+// split - на основі рядка створює масив рядків
+// в якості аргумента приймає рядок який буде використовувати
+// для розділення тексту в початкому рядку
+const arr1 = str2.split(); // ["Test StrING"]
+const arr2 = str2.split(' '); // ["Test", "StrING"]
+const arr3 = str2.split(''); // ['T', 'e', 's', 't', ' ', 'S', 't', 'r', 'I', 'N', 'G']
+
+arr3[2] = 'S';
+
+const str3 = arr3.join('');
