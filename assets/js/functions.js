@@ -130,3 +130,43 @@ function func2 (param1) {
 // func1(); // result 1
 
 // func2() // result 2
+
+// Чисті функції
+/*
+  чиста функція - це функція яка задовільняє двом вимогам:
+    1. При однакових вхідних аргументах функція завжди повертає однаковий результат (детермінованість функції)
+    2. У функції мають бути відсутні побічні впливи/ефекти
+*/
+function sum (num1, num2) {
+  return num1 + num2;
+}
+
+// sum - детермінована функція
+const res1 = sum(0.1,0.2);
+
+let someNumber = 0;
+// badSum - недетермінована функція
+function badSum(num1, num2) {
+  return num1 + num2 + someNumber;
+}
+
+const res2 = badSum(2,2);
+
+// функції з побічними ефектами
+
+function badSum2 (num1, num2) {
+  num1 = +num1; // побічний ефект - зміна аргумента
+  console.log(num1 + num2); // побічний ефект потоку виведеня 
+  someNumber++; // побічний ефект - зміна зовнішніх даних
+  return num1 + num2;
+}
+
+//
+function multiply (num1, num2) {
+  // console.log('test');
+  return num1 * num2;
+}
+
+function getSquare (num) {
+  return multiply(num, num);
+}
