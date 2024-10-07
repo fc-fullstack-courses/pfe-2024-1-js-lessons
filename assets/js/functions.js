@@ -170,3 +170,33 @@ function multiply (num1, num2) {
 function getSquare (num) {
   return multiply(num, num);
 }
+
+// функції вищого порядку ( HOF - high order function )
+/*
+  функція вищого порядку - функція яка або:
+    1. приймає як аргумент іншу функцію
+    2. повертає як результат іншу функцію
+*/
+
+const array = [1, 10, 100];
+
+// forEach - функція вищого порядку тому що приймає іншу функцію
+array.forEach(function (num) {
+  console.log(num)
+});
+
+
+// hofExample2 - функція вищого порядку тому що повертає функцію як результат
+function hofExample2 () {
+
+
+  const innerFunction = function () {
+    console.log('some text');
+  }
+
+  return innerFunction;
+}
+
+const result = hofExample2();
+
+result();
