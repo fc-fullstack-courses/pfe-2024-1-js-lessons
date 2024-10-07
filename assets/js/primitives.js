@@ -240,7 +240,28 @@ console.log(someText);
 
     5 + 3 = 8
 */
-let a = 5;
+let a = 25;
 let b = 3;
 // alert(a + ' * ' + b + ' = ' + a * b);
-alert(a + ' + ' + b + ' = ' + (a + b));
+// alert(a + ' + ' + b + ' = ' + (a + b));
+
+// шаблонний рядок
+const templateString = `якийсь текст
+    тут щось інше`;
+console.log(templateString);
+
+const obj = {
+  someText: `рядок 1
+  рядок 2`
+}
+
+console.log(obj.someText);
+
+// 
+const templateStringWithVariable = `Значення змінної а дорівнює ${a}`;
+const templateStringWithExpression = `П'ять в квадраті а дорівнює ${Math.pow(5, 2)}`;
+console.log(templateStringWithExpression);
+
+// alert(`${a} + ${b} = ${a + b}`);
+// alert(`${a} * ${b} = ${a * b}`);
+// alert(`${a} - ${b} = ${a - b}`);
