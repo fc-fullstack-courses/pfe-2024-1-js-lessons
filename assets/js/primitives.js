@@ -213,3 +213,14 @@ function toRandomCase (str) {
 }
 
 const res1 = toRandomCase('My STRing');
+
+
+// const someText = 'Якійсь текст ... Тут могло бути ваше ім'я але є невеликий нюанс';
+
+// const someText = "Якійсь текст ... Тут могло бути ваше ім'я але є невеликий нюанс";
+
+// const someText2 = 'Якійсь текст ... Тут могло бути ваше ім\'я але є невеликий нюанс';
+
+const someText = "\u00ae\t\tЯкійсь текст ... \n`Тут` могло бути ваше \\ ім'я \nале є \"невеликий\" нюанс";
+
+console.log(someText);
