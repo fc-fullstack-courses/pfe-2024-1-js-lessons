@@ -207,3 +207,40 @@ const hello1 = sayHello('John');
 
 const hello2 = sayHello();
 // console.log(hello2);
+
+// функція, яка приймає рядок та повертає його варіант, де кожна літера випадково буде у врехньому або нижньому регістрі
+function toRandomCase1(str) {
+  let resultString = '';
+
+  // цикл проходить по рядку і кладе в результуючу змінну літеру або в верхньому або в нижньому регістрі
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i];
+    if (Math.random() > 0.5) {
+      resultString += letter.toUpperCase();
+    } else {
+      resultString += letter.toLowerCase();
+    }
+  }
+
+  return resultString;
+}
+
+/**
+ * функція, яка приймає рядок та повертає його варіант, де кожна літера випадково буде у врехньому або нижньому регістрі
+ * @param {string} str - рядок який буде перетворено
+ * @returns {string} змінений рядок
+*/
+function toRandomCase2(str) {
+  let resultString = '';
+
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i];
+    if (Math.random() > 0.5) {
+      resultString += letter.toUpperCase();
+    } else {
+      resultString += letter.toLowerCase();
+    }
+  }
+
+  return resultString;
+}
