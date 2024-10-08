@@ -96,7 +96,7 @@ const getSumOfTwoNumbers = function (firstNumber, secondNumber) {
 
 const result2 = getSumOfTwoNumbers(NaN, 10);
 
-console.log('Result2 is: ' + result2);
+// console.log('Result2 is: ' + result2);
 
 // alert('Result is: ' + result);
 // const result1 = myFirstFunction(10);
@@ -111,18 +111,17 @@ console.log('Result2 is: ' + result2);
 // console.log(consoleLogRes);
 // console.log(alertRes);
 
-
 // func1(); // error
 
-func2(); // result 2
+// func2(); // result 2
 
 const func1 = function (param1) {
   console.log('func1');
   return 'result 1';
-}
+};
 
 // function declaration (об'явлення функції)
-function func2 (param1) {
+function func2(param1) {
   console.log('func2');
   return 'result 2';
 }
@@ -137,12 +136,12 @@ function func2 (param1) {
     1. При однакових вхідних аргументах функція завжди повертає однаковий результат (детермінованість функції)
     2. У функції мають бути відсутні побічні впливи/ефекти
 */
-function sum (num1, num2) {
+function sum(num1, num2) {
   return num1 + num2;
 }
 
 // sum - детермінована функція
-const res1 = sum(0.1,0.2);
+const res1 = sum(0.1, 0.2);
 
 let someNumber = 0;
 // badSum - недетермінована функція
@@ -150,24 +149,24 @@ function badSum(num1, num2) {
   return num1 + num2 + someNumber;
 }
 
-const res2 = badSum(2,2);
+const res2 = badSum(2, 2);
 
 // функції з побічними ефектами
 
-function badSum2 (num1, num2) {
+function badSum2(num1, num2) {
   num1 = +num1; // побічний ефект - зміна аргумента
-  console.log(num1 + num2); // побічний ефект потоку виведеня 
+  // console.log(num1 + num2); // побічний ефект потоку виведеня
   someNumber++; // побічний ефект - зміна зовнішніх даних
   return num1 + num2;
 }
 
 //
-function multiply (num1, num2 = 2) {
+function multiply(num1, num2 = 2) {
   // console.log('test');
   return num1 * num2;
 }
 
-function getSquare (num) {
+function getSquare(num) {
   return multiply(num, num);
 }
 
@@ -182,32 +181,29 @@ const array = [1, 10, 100];
 
 // forEach - функція вищого порядку тому що приймає іншу функцію
 array.forEach(function (num) {
-  console.log(num)
+  // console.log(num);
 });
 
-
 // hofExample2 - функція вищого порядку тому що повертає функцію як результат
-function hofExample2 () {
-
-
+function hofExample2() {
   const innerFunction = function () {
     console.log('some text');
-  }
+  };
 
   return innerFunction;
 }
 
 const result = hofExample2();
 
-result();
+// result();
 
 // значення параметрів за замовчанням
-function sayHello (userName = 'Guest') {
+function sayHello(userName = 'Guest') {
   return `Hello ${userName}`;
 }
 
 const hello1 = sayHello('John');
-console.log(hello1);
+// console.log(hello1);
 
 const hello2 = sayHello();
-console.log(hello2);
+// console.log(hello2);
