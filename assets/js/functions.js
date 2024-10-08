@@ -1,5 +1,5 @@
 // Функції - блоки коду які можно повторно використовувати
-
+'use strict';
 /*
   параметри функції - речі які передаємо всередину 
                       як додаткову інформацію 
@@ -229,7 +229,7 @@ function toRandomCase1(str) {
  * функція, яка приймає рядок та повертає його варіант, де кожна літера випадково буде у врехньому або нижньому регістрі
  * @param {string} str - рядок який буде перетворено
  * @returns {string} змінений рядок
-*/
+ */
 function toRandomCase2(str) {
   let resultString = '';
 
@@ -243,4 +243,127 @@ function toRandomCase2(str) {
   }
 
   return resultString;
+}
+
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @returns {number}
+ */
+function declarationSum(num1, num2) {
+  return num1 + num2;
+}
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @returns {number}
+ */
+const expressionSum = function (num1, num2) {
+  return num1 + num2;
+};
+
+// arrow function (функції - стрілки)
+
+// arrowSum(); // error!
+
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @returns {number}
+ */
+const arrowSum = (num1 = 2, num2 = 4) => {
+  return num1 + num2;
+};
+
+// 1. У них існує скорочена версія
+const arrowSumCompact = (num1 = 2, num2 = 4) => num1 + num2;
+
+const arr = ['test', 120, null, false, '123545', -15, true, {}];
+
+const numbers1 = arr.filter(function (elem) {
+  return typeof elem === 'number';
+});
+
+const numbers2 = arr.filter((elem) => typeof elem === 'number');
+
+// 1.5 особливості запису дужок параметрів
+
+const arrow1 = param => console.log(param); // ok
+
+// const arrow2 = param, param2 => console.log(param); // error
+
+// const arrow3 =  => console.log(param); // error
+
+// 2. відсутній arguments
+function test () {
+  // console.log(arguments); // об'єкт
+}
+
+const arrowTest = () => {
+  // console.log(arguments); // error
+}
+
+// 3. Не можуть використовуватися як конструктори
+// const obj1 = new declarationSum();
+
+// const obj2 = new arrowSum(); // error
+
+// 4. У стрілок відсутній власний this
+// стрілки беруть значення this з батьківськго контексту виконання
+
+// console.log(this); // Window
+
+const arrowThis = () => {
+  console.log(this); // Window
+}
+
+const eShopObject = {
+  name: 'єШоп',
+  email: 'admin@eshop.com',
+  products: [
+    { name: 'Prod 1', price: 1000, quantity: 5},
+    { name: 'Prod 2', price: 269.99, quantity: 5000},
+    { name: 'Prod 3', price: 53.74, quantity: 1500000},
+    { name: 'Prod 4', price: 9999.99, quantity: 51575},
+    { name: 'Prod 5', price: 824.5, quantity: 115},
+  ],
+  logAllProducts: function () {
+    debugger;
+    this.products.forEach(function (product) {
+      // Магазин єШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      // вттрата контексту виконання this === undefined
+      console.log(`Магазин ${this.name} продає на розетці товар з назвою ${product.name} і ціною ${product.price} `);
+    });
+  },
+  logAllProductsFix1: function () {
+
+    let that = this;
+
+    this.products.forEach(function (product) {
+      // Магазин єШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      console.log(`Магазин ${that.name} продає на розетці товар з назвою ${product.name} і ціною ${product.price} `);
+    });
+  },
+  logAllProductsFix2: function () {
+
+    const callbackWithBadThis = function (product) {
+      // console.log(this);
+      // Магазин єШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      console.log(`Магазин ${this.name} продає на розетці товар з назвою ${product.name} і ціною ${product.price} `);
+    }
+
+    const callback = callbackWithBadThis.bind(this);
+
+    // this.products.forEach(callback);
+    this.products.forEach(callbackWithBadThis.bind(this));
+  },
+  logAllProductsFix3: function () {
+    this.products.forEach((product) => {
+      // Магазин єШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      console.log(`Магазин ${this.name} продає на розетці товар з назвою ${product.name} і ціною ${product.price} `);
+    });
+  },
+  testMethod : () => {
+    console.log(this); // Window
+  }
 }
