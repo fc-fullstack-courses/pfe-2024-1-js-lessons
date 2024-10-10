@@ -91,3 +91,17 @@ function createId () {
 
 const userIdHelper = createId();
 const productIdHelper = createId();
+/*
+  створити функцію createMultiplier
+  ця функція має приймати число X
+  і повертати іншу функцію
+
+  повернена функція має приймати якесь інше число Y
+  коли її запускають вона має помножити Y на Х та усі попередні значення Y
+
+  const multiply = createMultiplier(5);
+
+  multiply(2); // 2 * 5 = 10
+  multiply(2); // 10 * 2 = 20
+  multiply(100); // 20 * 100 = 2000
+*/
