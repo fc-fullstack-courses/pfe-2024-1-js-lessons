@@ -26,10 +26,10 @@ function log3() {
   }
 
 
-  console.log(data);
+  // console.log(data);
 }
 
-log3();
+// log3();
 
 // Лексичне оточення функції - спеціальний об'єкт, який містить всі змінні, які функція бачить
 // розраховується на момент створення функції
@@ -49,8 +49,45 @@ function log4 () {
 // debugger;
 const innerLog1 = log4();
 
-innerLog1();
-innerLog1();
-innerLog1();
-innerLog1();
-innerLog1();
+// innerLog1();
+// innerLog1();
+// innerLog1();
+// innerLog1();
+// innerLog1();
+
+function createGreeting (name) {
+
+  function greet () {
+    return `Hello, ${name}`;
+  }
+
+  return greet;
+}
+
+const greetAnton = createGreeting('Anton');
+const greetOksana = createGreeting('Oksana');
+
+function createId () {
+  let currentId = 0;
+
+  function getNewId () {
+    currentId++;
+    return currentId;
+  }
+
+  function getId () {
+    return currentId;
+  }
+
+  // return getNewId;
+
+  const returningObject = {
+    getLastId: getId,
+    getNewId: getNewId
+  }
+
+  return returningObject;
+}
+
+const userIdHelper = createId();
+const productIdHelper = createId();
