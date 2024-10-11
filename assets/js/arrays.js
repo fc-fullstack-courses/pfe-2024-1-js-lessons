@@ -352,7 +352,7 @@ const isAllNumbersOdd = numbers2.every(function (number) {
 // find - повертає перший елемент, який пройшов перевірку з коллбеку
 // якщо жоден елемент не пройде перевірку повертає undefined
 
-const numbers3 = [1, 4, 5, 7, 100, 10, -5 , 12, 4, 9];
+const numbers3 = [1, 4, 5, 7, 100, 10, -5, 12, 4, 9];
 
 const negativeNumber = numbers3.find(function (number) {
   // if(number < 0) {
@@ -361,9 +361,9 @@ const negativeNumber = numbers3.find(function (number) {
   //   return false;
   // }
   return number < 0;
-}); 
+});
 
-console.log(negativeNumber);
+// console.log(negativeNumber);
 
 // findIndex - повертає перший індекс елементу, який пройшов перевірку з коллбеку
 // якщо жоден елемент не пройде перевірку повертає -1
@@ -378,7 +378,20 @@ const janeIndex = names3.findIndex(function (name) {
   return name === 'Jane';
 });
 
+// console.log(oksanaIndex);
 
-console.log(oksanaIndex);
+// console.log(janeIndex);
 
-console.log(janeIndex);
+// reduce - метод обходу масиву який на основі елементів масиву може отримати якесь одне значення
+// на основі коллбек функції, яку називають редюсером
+const numbers4 = [10, 2, 3, 4, 5, 6, 7, 8];
+
+// const result = numbers4.reduce((accumulator, number, index, array) => {
+//   console.log(accumulator);
+//   console.log(number);
+//   return `new accumulator ${number}`;
+// }, 0);
+// debugger;
+const numbers4TotalSum = numbers4.reduce((acc, num) => acc + num, 0);
+
+const sum = (...numbers) => numbers.reduce((acc, num) => acc + num);

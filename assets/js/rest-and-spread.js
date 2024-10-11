@@ -66,6 +66,8 @@ const sumWithRestOperator2 = (...numbers) => {
   return resultingSum;
 };
 
+const sum = (...numbers) => numbers.reduce((acc, num) => acc + num);
+
 // spread - оператор (оператор розширення)
 
 const numbers = [20, 35, 15, 7, 2, -10, 0, 100, -0.5];
@@ -87,8 +89,8 @@ const numbers = [20, 35, 15, 7, 2, -10, 0, 100, -0.5];
 const minNumber = Math.min(...numbers, 10000);
 console.log(minNumber);
 
-const nums1 = [2,4,6,8,10];
-const nums2 = [1,3,5,7,9];
+const nums1 = [2, 4, 6, 8, 10];
+const nums2 = [1, 3, 5, 7, 9];
 
 const allNums = [...nums1, 1000000000, ...nums2, -1000];
 
