@@ -105,3 +105,16 @@ const productIdHelper = createId();
   multiply(2); // 10 * 2 = 20
   multiply(100); // 20 * 100 = 2000
 */
+function getMultiplier(x) {
+  let getResult = x;
+  
+  return function (y) {
+      getResult *= y;
+      return getResult;
+  }
+}
+
+const multiply = getMultiplier(5);
+console.log(multiply(2));
+console.log(multiply(2));
+console.log(multiply(100));
