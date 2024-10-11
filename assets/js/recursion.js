@@ -106,3 +106,11 @@ function reduceTree (tree) {
 
 // debugger;
 // reduceTree(tree);
+
+// let array = [5,4,7];
+
+// let otherArray = array.map(()=> {});
+
+// otherArray.length;
+
+// array.map(()=> {}).length;
