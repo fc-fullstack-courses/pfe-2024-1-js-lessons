@@ -89,9 +89,9 @@ class Product {
    * @param {boolean} isForAdult 
    */
   constructor (name, price, amount, isForAdult) {
-    if(typeof name !== 'string' || name.trim().length === 0) {
-      throw new TypeError('name of a product must be string');
-    }
+    // if(typeof name !== 'string' || name.trim().length === 0) {
+    //   throw new TypeError('name of a product must be string');
+    // }
 
     if(typeof price !== 'number' || isNaN(price)) {
       throw new TypeError('price of a product must be numeric');
@@ -113,10 +113,48 @@ class Product {
       throw new TypeError('isForAdult of a product must be boolean');
     }
 
-    this.name = name;
+    this.name = name; // це вже використовується сеттер name
     this.price = price;
     this.amount = amount;
     this.isForAdult = isForAdult;
+
+    // _ означає що розробник не рекомендує напряму лізти до цих властивостей
+    // this._name = name;
+    // this._price = price;
+    // this._amount = amount;
+    // this._isForAdult = isForAdult;
+
+    this.setterTarget = null;
+  }
+
+  // геттер - псевдовластивість яка повертає якесь значення
+  get test () {
+    return `some test value`;
+  }
+
+  // просто повертаємо значення службової властивості
+  get name () {
+    return this._name;
+  }
+
+  // сеттер (встановлювач) - створює якусь псевдовластивіть при спробі записати яку
+  // змінюєтся якась інша властивість 
+  set setterName (x) {
+    if(typeof x !== 'string') {
+      throw new TypeError('bad type');
+    }
+
+    this.setterTarget = x;
+  }
+
+  // встановлюємо нове значення для службової властивості
+  // product.name = 12356;
+  set name (newName) {
+    if(typeof newName !== 'string' || newName.trim().length === 0) {
+      throw new TypeError('name of a product must be string');
+    }
+
+    this._name = newName; // тут з'являєсться _name у об'єкті продукта
   }
 
   getPriceOfAllProduct () {
@@ -146,7 +184,11 @@ const owner1 = {
 //   console.log('Owner 1 не може купити все морозиво, бо йому бракує коштів');
 // }
 
-const product4 = new Product('test', 5, 2000, false);
+const product4 = new Product(12334354, 5, 2000, false);
 
 console.log(product4.getPriceOfAllProduct());
+
+// product4.amount = 'test';
+
+// console.log(product4.getPriceOfAllProduct()); 
 
