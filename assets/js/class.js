@@ -68,3 +68,49 @@ const house4 = new House(4,4, 'test address 2', 25000);
 
 // створення екземпляра без new завжди викликає помилку
 // const house5 = House(4,4, 'test address 2', 25000); // ERROR
+
+/*
+  Створити клас Product (товар)
+    у нього мають бути наступні властивості
+      назва
+      ціна
+      кількість (на складі)
+      чи товар для дорослих
+
+    має бути метод який поверне загальну ціну усіх одиниць товару на складі
+*/
+class Product {
+  constructor (name, price, amount, isForAdult) {
+    this.name = name;
+    this.price = price;
+    this.amount = amount;
+    this.isForAdult = isForAdult;
+  }
+
+  getPriceOfAllProduct () {
+    // return `Загальна вартість всіх одиниць товару '${this.name}' = ${this.price * this.amount} грн`;
+    return this.price * this.amount;
+  };
+};
+
+const product1 = new Product('ice cream', 40, 10, false);
+const product2 = new Product('water', 20, 30, false);
+const product3 = new Product('beer', 100, 5, true);
+
+const owner1 = {
+  name: 'Owner 1',
+  email: 'owner1@gmail.com',
+  balance: 5000,
+  age: 13
+}
+
+console.log(`Загальна вартість всіх одиниць товару '${product1.name}' = ${product1.getPriceOfAllProduct()} грн`);
+
+//
+// if(owner1.balance >= (product1.price * product1.amount)) {
+if(owner1.balance === product1.getPriceOfAllProduct()) {
+  console.log('Owner 1 може купити все морозиво');
+} else {
+  console.log('Owner 1 не може купити все морозиво, бо йому бракує коштів');
+}
+
