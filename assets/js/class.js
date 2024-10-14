@@ -80,7 +80,39 @@ const house4 = new House(4,4, 'test address 2', 25000);
     має бути метод який поверне загальну ціну усіх одиниць товару на складі
 */
 class Product {
+  /**
+   * 
+   * @constructor
+   * @param {string} name 
+   * @param {number} price 
+   * @param {number} amount 
+   * @param {boolean} isForAdult 
+   */
   constructor (name, price, amount, isForAdult) {
+    if(typeof name !== 'string' || name.trim().length === 0) {
+      throw new TypeError('name of a product must be string');
+    }
+
+    if(typeof price !== 'number' || isNaN(price)) {
+      throw new TypeError('price of a product must be numeric');
+    }
+
+    if(price < 0) {
+      throw new RangeError('price must not be negative number');
+    }
+
+    if(typeof amount !== 'number' || isNaN(amount)) {
+      throw new TypeError('amount of a product must be numeric');
+    }
+
+    if(amount < 0) {
+      throw new RangeError('amount must not be negative number');
+    }
+    
+    if(typeof isForAdult !== 'boolean') {
+      throw new TypeError('isForAdult of a product must be boolean');
+    }
+
     this.name = name;
     this.price = price;
     this.amount = amount;
@@ -104,13 +136,17 @@ const owner1 = {
   age: 13
 }
 
-console.log(`Загальна вартість всіх одиниць товару '${product1.name}' = ${product1.getPriceOfAllProduct()} грн`);
+// console.log(`Загальна вартість всіх одиниць товару '${product1.name}' = ${product1.getPriceOfAllProduct()} грн`);
 
 //
 // if(owner1.balance >= (product1.price * product1.amount)) {
-if(owner1.balance === product1.getPriceOfAllProduct()) {
-  console.log('Owner 1 може купити все морозиво');
-} else {
-  console.log('Owner 1 не може купити все морозиво, бо йому бракує коштів');
-}
+// if(owner1.balance === product1.getPriceOfAllProduct()) {
+//   console.log('Owner 1 може купити все морозиво');
+// } else {
+//   console.log('Owner 1 не може купити все морозиво, бо йому бракує коштів');
+// }
+
+const product4 = new Product('test', 5, 2000, false);
+
+console.log(product4.getPriceOfAllProduct());
 
