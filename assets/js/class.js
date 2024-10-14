@@ -192,3 +192,6 @@ console.log(product4.getPriceOfAllProduct());
 
 // console.log(product4.getPriceOfAllProduct()); 
 
+/*
+  доробити геттери та сеттери для властивостей price, amount, isForAdults
+*/
