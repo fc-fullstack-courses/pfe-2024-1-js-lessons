@@ -59,3 +59,24 @@ class Bird extends Animal {
 
 const parrot1 = new Bird('Kesha', 2, 0.8);
 const parrot2 = new Bird('NotKesha', 0.5, 1);
+
+/*
+  Створити клас User
+    з властивостями
+      firstName
+      lastName
+      age
+      isBanned
+    
+    а також з методом:
+      createMessage
+      deleteMessage
+  
+  Створити клас Moderator який має успадковуватися від класу User
+    він також має мати додаткову властивість
+      subforumList (масив)
+    
+    модератор також має наступні методи:
+      createSubforum
+      deleteSubFoum
+*/
