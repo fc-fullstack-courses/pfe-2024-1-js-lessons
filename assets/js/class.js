@@ -89,29 +89,6 @@ class Product {
    * @param {boolean} isForAdult 
    */
   constructor (name, price, amount, isForAdult) {
-    // if(typeof name !== 'string' || name.trim().length === 0) {
-    //   throw new TypeError('name of a product must be string');
-    // }
-
-    if(typeof price !== 'number' || isNaN(price)) {
-      throw new TypeError('price of a product must be numeric');
-    }
-
-    if(price < 0) {
-      throw new RangeError('price must not be negative number');
-    }
-
-    if(typeof amount !== 'number' || isNaN(amount)) {
-      throw new TypeError('amount of a product must be numeric');
-    }
-
-    if(amount < 0) {
-      throw new RangeError('amount must not be negative number');
-    }
-    
-    if(typeof isForAdult !== 'boolean') {
-      throw new TypeError('isForAdult of a product must be boolean');
-    }
 
     this.name = name; // це вже використовується сеттер name
     this.price = price;
@@ -137,6 +114,18 @@ class Product {
     return this._name;
   }
 
+  get price () {
+    return this._price;
+  }
+
+  get amount () {
+    return this._amount;
+  }
+
+  get isForAdult () {
+    return this._isForAdult;
+  }
+
   // сеттер (встановлювач) - створює якусь псевдовластивіть при спробі записати яку
   // змінюєтся якась інша властивість 
   set setterName (x) {
@@ -155,6 +144,38 @@ class Product {
     }
 
     this._name = newName; // тут з'являєсться _name у об'єкті продукта
+  }
+
+  set price (newPrice) {
+    if(typeof newPrice !== 'number' || isNaN(newPrice)) {
+      throw new TypeError('price of a product must be numeric');
+    }
+
+    if(newPrice < 0) {
+      throw new RangeError('price must not be negative number');
+    }
+
+    this._price = newPrice;
+  }
+
+  set amount (newAmount) {
+    if(typeof newAmount !== 'number' || isNaN(newAmount)) {
+      throw new TypeError('amount of a product must be numeric');
+    }
+
+    if(newAmount < 0) {
+      throw new RangeError('amount must not be negative number');
+    }
+
+    this._amount = newAmount;
+  }
+
+  set isForAdult (newIsForAdult) {
+    if(typeof newIsForAdult !== 'boolean') {
+      throw new TypeError('isForAdult of a product must be boolean');
+    }
+
+    this._isForAdult = newIsForAdult;
   }
 
   getPriceOfAllProduct () {
@@ -184,7 +205,7 @@ const owner1 = {
 //   console.log('Owner 1 не може купити все морозиво, бо йому бракує коштів');
 // }
 
-const product4 = new Product(12334354, 5, 2000, false);
+const product4 = new Product('12334354', 5, 2000, false);
 
 console.log(product4.getPriceOfAllProduct());
 
@@ -192,6 +213,3 @@ console.log(product4.getPriceOfAllProduct());
 
 // console.log(product4.getPriceOfAllProduct()); 
 
-/*
-  доробити геттери та сеттери для властивостей price, amount, isForAdults
-*/
