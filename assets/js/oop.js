@@ -119,3 +119,14 @@ class Moderator extends User {
 }
 
 const moder1 = new Moderator('Moder', 'the Great', 35);
+
+/*
+  Створити клас Admin який буде успадковуватися від класу Moderator
+    у адміністратора буде наступна валстивість:
+      contactEmail
+
+    у нього буде методи:
+      ban - банить користувача
+      unban - розбанює користувача
+
+*/
