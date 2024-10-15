@@ -80,3 +80,42 @@ const parrot2 = new Bird('NotKesha', 0.5, 1);
       createSubforum
       deleteSubFoum
 */
+class User {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.isBanned = false;
+  }
+
+  createMessage () {
+    console.log('message created');
+  }
+
+  deleteMessage () {
+    console.log('message deleted');
+  }
+}
+
+const user1 = new User('Test', 'Testenko', 12);
+
+class Moderator extends User {
+  constructor(firstName, lastName, age ) {
+    super(firstName, lastName, age);
+    this.subForumList = [];
+  }
+
+  createSubForum(forumName) {
+    this.subForumList.push(forumName);
+  }
+
+  deleteSubForum (forumName) {
+    // const newSubForumList = this.subForumList.filter((currentForum) => currentForum !== forumName);
+
+    // this.subForumList = newSubForumList;
+
+    this.subForumList = this.subForumList.filter((currentForum) => currentForum !== forumName);
+  }
+}
+
+const moder1 = new Moderator('Moder', 'the Great', 35);
