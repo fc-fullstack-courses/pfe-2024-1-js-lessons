@@ -66,11 +66,11 @@ class House {
 
   // функція - конструктор, запускається при створенні через new
   // у класі може бути не більше 1 constructor
-  constructor (floors = 1, apartmentsPerFloor = 2, address = 'test address', priceOfApartment = 1000) {
+  constructor (floors = 1, apartmentsPerFloor = 2, address = 'test address', apartmentPrice = 1000) {
     this.floors = floors;
     this.apartmentsPerFloor = apartmentsPerFloor;
     this.address = address;
-    this.priceOfApartment = priceOfApartment;
+    this.apartmentPrice = apartmentPrice;
     // this.id = NaN;
   }
 
@@ -90,7 +90,25 @@ class House {
 
   // статична властивість - валстивіть яка буде у самого класу а не у його екземплярів (конкретних об'єктів)
   static staticProperty = 'This is static property of Product class';
+
+  /**
+   * Повертає правду якщо аргумент був створений щза допомогою конструктора House,
+   * тобто є його екземпляром
+   * @param {*} obj перевіряємий аргумент
+   * @returns {boolean}
+   */
+  static isHouse (obj) {
+    // const isObjAHouse = obj instanceof House;
+    // return isObjAHouse;
+
+    return obj instanceof House;
+  }
 }
+
+/*
+  зробіть статичний метод класу Product isProduct. приймає 1 параметр і каже чи був він 
+  екземпляром класу Product
+*/
 
 const house3 = new House();
 const house4 = new House(4,4, 'test address 2', 25000);
@@ -211,6 +229,10 @@ class Product {
     // return `Загальна вартість всіх одиниць товару '${this.name}' = ${this.price * this.amount} грн`;
     return this.price * this.amount;
   };
+
+  static isProduct (arg) {
+    return arg instanceof Product;
+  }
 };
 
 const product1 = new Product('ice cream', 40, 10, false);
