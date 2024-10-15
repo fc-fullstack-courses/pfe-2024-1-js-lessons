@@ -55,7 +55,7 @@ someWeirdFunction(Test);
 function classGenerator (...args) {
 
   return class {
-    
+
   }
 }
 
@@ -81,6 +81,15 @@ class House {
 
   // властивість прототипу (спілньна однакова властивість всіх будинків)
   id = NaN;
+
+
+  // статичний метод - метод який буде у самого класу а не у його екземплярів (конкретних об'єктів)
+  static someStaticMethod2 () {
+    console.log('someStaticMethod2');
+  }
+
+  // статична властивість - валстивіть яка буде у самого класу а не у його екземплярів (конкретних об'єктів)
+  static staticProperty = 'This is static property of Product class';
 }
 
 const house3 = new House();
@@ -233,3 +242,18 @@ console.log(product4.getPriceOfAllProduct());
 
 // console.log(product4.getPriceOfAllProduct()); 
 
+// Array.isArray(product4);
+
+// const data1 = 'sfdas';
+
+// const testArray = [];
+
+// testArray.isArray(data1)
+
+// testArray.push('some data');
+
+// Array.push(testArray, 'some data');
+
+// House.someStaticMethod1 = function () {
+//   console.log('its static method of Product class');
+// }
