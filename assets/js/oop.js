@@ -178,3 +178,75 @@ class Admin extends Moderator {
 const admin1 = new Admin('Tiran', 'Dykatorovich', 215, 'tiran@gmail.com');
 
 // admin1.ban(admin1);
+
+// /**
+//  * 
+//  * @param {number} a 
+//  */
+// function getAreaOfFigure(a) {
+//   return a * a;
+// }
+
+// /**
+//  * 
+//  * @param {number} a 
+//  * @param {number} b 
+//  */
+// function getAreaOfFigure (a, b) {
+//   return a * b;
+// }
+
+// getAreaOfFigure(2); // 4
+// getAreaOfFigure(3,8); // 24
+
+// 2. Поліморфізм - можливість методів успадкованих класів працювати по різному
+class Figure {
+  constructor (name) {
+    this.name = name;
+  }
+
+  getArea () {
+    console.log(`this function will calculate area of ${this.name}`);
+    return NaN;
+  }
+
+  static isFigure (value) {
+    return value instanceof Figure;
+  }
+}
+
+class Rectangle extends Figure {
+  constructor(a, b) {
+    super('rectangle');
+    this.a = a;
+    this.b = b;
+  }
+
+  getArea () {
+    return this.a * this.b;
+  }
+}
+
+class Triangle extends Figure {
+  constructor(a, h) {
+    super('triangle');
+    this.a = a;
+    this.h = h;
+  }
+
+  getArea() {
+    return this.a * this.h * 0.5;
+  }
+}
+
+const figure1 = new Figure('some random figure');
+const rect1 = new Rectangle(2,5);
+const tri1 = new Triangle(2,5);
+
+function getAreaOfFigure (figure) {
+  if(Figure.isFigure(figure)) {
+    return figure.getArea();
+  }
+
+  throw new TypeError('figure must be instance of Figure');
+}
