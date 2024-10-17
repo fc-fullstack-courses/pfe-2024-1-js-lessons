@@ -130,3 +130,21 @@ const moder1 = new Moderator('Moder', 'the Great', 35);
       unban - розбанює користувача
 
 */
+class Admin extends Moderator {
+  constructor (firstName, lastName, age, contactEmail) {
+    super(firstName, lastName, age);
+    this.contactEmail = contactEmail;
+  }
+
+  ban (user) {
+    user.isBanned = true;
+    return user;
+  }
+
+  unban (user) {
+    user.isBanned = false;
+    return user;
+  }
+}
+
+const admin1 = new Admin('Tiran', 'Dykatorovich', 215, 'tiran@gmail.com');
