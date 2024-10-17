@@ -1,24 +1,24 @@
 // Концепції ООП (об'єктно-орієнтованого програмування)
 
 // 1. Успадкування
-class Animal {
-  constructor (nickname, weight = 1, type = 'animal') {
-    this.nickname = nickname;
-    this.weight = weight;
-    this.type = type;
-  }
+// class Animal {
+//   constructor (nickname, weight = 1, type = 'animal') {
+//     this.nickname = nickname;
+//     this.weight = weight;
+//     this.type = type;
+//   }
 
-  sleep () {
-    console.log(`${this.nickname} is sleeping`);
-  }
+//   sleep () {
+//     console.log(`${this.nickname} is sleeping`);
+//   }
 
-  eat () {
-    console.log(`${this.nickname} is eating`);
-  }
-}
+//   eat () {
+//     console.log(`${this.nickname} is eating`);
+//   }
+// }
 
-const mouse = new Animal('Jerry');
-const dog = new Animal('Bulldog');
+// const mouse = new Animal('Jerry');
+// const dog = new Animal('Bulldog');
 
 // class Bird {
 //   constructor (nickname, weight = 1) {
@@ -40,25 +40,25 @@ const dog = new Animal('Bulldog');
 // }
 
 
-class Bird extends Animal {
-  constructor (nickname, weight = 1, wingspan = 0.7) {
-    // запуск батьківського конструктора ( зараз Animal)
-    // має бути запущений до роботи с this
-    // та до повертання підсумкового об'єкту
-    super(nickname, weight, 'bird');
+// class Bird extends Animal {
+//   constructor (nickname, weight = 1, wingspan = 0.7) {
+//     // запуск батьківського конструктора ( зараз Animal)
+//     // має бути запущений до роботи с this
+//     // та до повертання підсумкового об'єкту
+//     super(nickname, weight, 'bird');
 
-    // this.nickname = nickname;
+//     // this.nickname = nickname;
 
-    this.wingspan = wingspan;
-  }
+//     this.wingspan = wingspan;
+//   }
 
-  fly () {
-    console.log(`${this.nickname} is flying`);
-  }
-}
+//   fly () {
+//     console.log(`${this.nickname} is flying`);
+//   }
+// }
 
-const parrot1 = new Bird('Kesha', 2, 0.8);
-const parrot2 = new Bird('NotKesha', 0.5, 1);
+// const parrot1 = new Bird('Kesha', 2, 0.8);
+// const parrot2 = new Bird('NotKesha', 0.5, 1);
 
 /*
   Створити клас User
@@ -250,3 +250,63 @@ function getAreaOfFigure (figure) {
 
   throw new TypeError('figure must be instance of Figure');
 }
+
+/*
+  Створити клас Animal
+    його екземпляри мають вміти пересуватися, їсти та спати за допомогою
+    спеціальних методів. Кожна тваринка має мати ім'я та тип (кіт, собака ...)
+
+  Успадкувати від класу тварин класи Змія та Пантера
+    і пантери і змії мають рухатися та їсти по своєму
+
+  всі методи можна робити на консоль логах
+*/
+class Animal {
+  constructor (nickname, type) {
+    this.nickname = nickname;
+    this.type = type;
+  }
+
+  sleep() {
+    console.log(`тваринка спить`);
+  }
+
+  eat () {
+    console.log(`тваринка їсть`);
+  }
+
+  move () {
+    console.log(`тваринка рухається`);
+  }
+}
+
+class Panther extends Animal {
+  constructor (nickname){
+    super(nickname, 'panther');
+  }
+
+  eat() {
+    console.log(`Пантера їсть якесь м'ясо`);
+  }
+
+  move() {
+    console.log(`Пантера швидко біжить`);
+  }
+}
+
+class Snake extends Animal {
+  constructor (nickname){
+    super(nickname, 'snake');
+  }
+
+  eat () {
+    console.log(`Змія їсть якогось хом'ячків`);
+  }
+
+  move () {
+    console.log(`Змія повільно повзе`);
+  }
+}
+
+const panther1 = new Panther('1');
+const snake1 = new Snake('2');
