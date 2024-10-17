@@ -261,52 +261,176 @@ function getAreaOfFigure (figure) {
 
   всі методи можна робити на консоль логах
 */
+// class Animal {
+//   constructor (nickname, type) {
+//     this.nickname = nickname;
+//     this.type = type;
+//   }
+
+//   sleep() {
+//     console.log(`тваринка спить`);
+//   }
+
+//   eat () {
+//     console.log(`тваринка їсть`);
+//   }
+
+//   move () {
+//     console.log(`тваринка рухається`);
+//   }
+// }
+
+// class Panther extends Animal {
+//   constructor (nickname){
+//     super(nickname, 'panther');
+//   }
+
+//   eat() {
+//     console.log(`Пантера їсть якесь м'ясо`);
+//   }
+
+//   move() {
+//     console.log(`Пантера швидко біжить`);
+//   }
+// }
+
+// class Snake extends Animal {
+//   constructor (nickname){
+//     super(nickname, 'snake');
+//   }
+
+//   eat () {
+//     console.log(`Змія їсть якогось хом'ячків`);
+//   }
+
+//   move () {
+//     console.log(`Змія повільно повзе`);
+//   }
+// }
+
+// const panther1 = new Panther('1');
+// const snake1 = new Snake('2');
+
+// 3. Інкапсуляція - приховування внутрішнього стану та методів об'єкту ві дзовнішнього світу
 class Animal {
+  // створення приватної властивості
+  #secret;
+  #hunger;
+  #mood;
+  #energy;
+
   constructor (nickname, type) {
     this.nickname = nickname;
     this.type = type;
+
+    // 0 (голодна) - 100 (сита)
+    this.#hunger = 50;
+
+    // 0 (стомлена) - 100 (повна сил)
+    this.#energy = 50;
+
+    // 0 (роззлючена) - 100 (задоволена)
+    this.#mood = 50;
+
+    this.#secret = 'try find be';
+  }
+
+  get hunger () {
+    return this.#hunger;
+  }
+
+  get energy () {
+    return this.#energy;
+  }
+
+  get mood () {
+    return this.#mood;
+  }
+
+  // приватні методи - можна запускати тількі в коді всередені класу
+  #setMood (newMood) {
+    if(typeof newMood !== 'number' || isNaN(newMood)) {
+      throw new TypeError('you must give number');
+    }
+
+    if(newMood <= 100 && newMood >= 0) {
+      this.#mood = newMood;
+    } else if(newMood < 0) {
+      this.#mood = 0;
+    } else if(newMood > 100) {
+      this.#mood = 100;
+    }
+  }
+
+  #setHunger (newHunger) {
+    if(typeof newHunger !== 'number' || isNaN(newHunger)) {
+      throw new TypeError('you must give number');
+    }
+
+    if(newHunger <= 100 && newHunger >= 0) {
+      this.#hunger = newHunger;
+    } else if(newHunger < 0) {
+      this.#hunger = 0;
+    } else if(newHunger > 100) {
+      this.#hunger = 100;
+    }
+  }
+
+  #setEnergy (newEnergy) {
+    if(typeof newEnergy !== 'number' || isNaN(newEnergy)) {
+      throw new TypeError('you must give number');
+    }
+
+    if(newEnergy <= 100 && newEnergy >= 0) {
+      this.#energy = newEnergy;
+    } else if(newEnergy < 0) {
+      this.#energy = 0;
+    } else if(newEnergy > 100) {
+      this.#energy = 100;
+    }
   }
 
   sleep() {
+    // console.log(this.#secret);
+
+    this.energy = this.energy + 50;
     console.log(`тваринка спить`);
   }
 
   eat () {
+    const hungerSated = 5;
+
+    this.hunger += hungerSated;
+
+    this.mood += 10;
+
     console.log(`тваринка їсть`);
   }
 
   move () {
+    this.#setEnergy(this.energy - 4);
+    this.#setHunger(this.hunger - 3);
+
     console.log(`тваринка рухається`);
   }
 }
 
-class Panther extends Animal {
-  constructor (nickname){
-    super(nickname, 'panther');
+const animal1 = new Animal('Мурзик', 'кіт');
+
+// animal1.hunger = 10;
+
+// console.log(animal1.#secret); // error
+
+// animal1.#setMood();
+
+class Dog extends Animal {
+  constructor(nickname) {
+    super(nickname, 'dog');
   }
 
-  eat() {
-    console.log(`Пантера їсть якесь м'ясо`);
-  }
-
-  move() {
-    console.log(`Пантера швидко біжить`);
-  }
-}
-
-class Snake extends Animal {
-  constructor (nickname){
-    super(nickname, 'snake');
-  }
-
-  eat () {
-    console.log(`Змія їсть якогось хом'ячків`);
-  }
-
-  move () {
-    console.log(`Змія повільно повзе`);
+  sleep () {
+    // this.#setEnergy(this.energy - 5); // error
   }
 }
 
-const panther1 = new Panther('1');
-const snake1 = new Snake('2');
+const dog1 = new Dog('dog1234');
