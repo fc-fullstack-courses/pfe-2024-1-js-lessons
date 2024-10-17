@@ -95,6 +95,10 @@ class User {
   deleteMessage () {
     console.log('message deleted');
   }
+
+  static isUser (value) {
+    return value instanceof User;
+  }
 }
 
 const user1 = new User('Test', 'Testenko', 12);
@@ -137,14 +141,40 @@ class Admin extends Moderator {
   }
 
   ban (user) {
+    if(!User.isUser(user)) {
+      throw new TypeError('user must be instance of User class');
+    }
+
+    if(Admin.isAdmin(user)) {
+      throw new TypeError('user must not be an admin');
+    }
+
+    if(user.isBanned) {
+      return user;
+    }
+
     user.isBanned = true;
     return user;
   }
 
   unban (user) {
+    if(!User.isUser(user)) {
+      throw new TypeError('user must be instance of User class');
+    }
+
+    if(!user.isBanned) {
+      return user;
+    }
+
     user.isBanned = false;
     return user;
+  }
+
+  static isAdmin (value) {
+    return value instanceof Admin;
   }
 }
 
 const admin1 = new Admin('Tiran', 'Dykatorovich', 215, 'tiran@gmail.com');
+
+// admin1.ban(admin1);
