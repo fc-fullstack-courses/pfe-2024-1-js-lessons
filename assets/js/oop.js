@@ -478,6 +478,7 @@ class Computer {
     S - SRP - Принцип єдиної відповідальності (Single responsibility principle)
     O - OCP - Принцип відкритості/закритості (Open/closed principle)
     L - LSP - Принцип підстановки Лісков (Liskov substitution principle)
+    I - ISP - Принцип розділення інтерфейсу (Interface segregation principle)
 */
 
 // Принцип єдиної відповідальності - кожен об'єкт / метод / клас має мати лише одн річ для якої він використовується
@@ -578,3 +579,42 @@ filterByProp(workers, 'fullName', 'Тарас Шевченко');
 //     return this.a * this.h * 0.5; // повертаємо число
 //   }
 // }
+
+// Принцип розділення інтерфейсу
+class Product {
+  constructor() {
+    // ...
+  }
+
+  getDetails () {
+    // ...
+  }
+
+  displayInFrontEnd () {
+    // ...
+  }
+
+  // saveToDataBase () {
+  //   // ...
+  // }
+}
+
+class DigitalProduct extends Product {
+  constructor() {
+    super();
+    // ...
+  }
+
+  // по умовам завдання saveToDataBase не має бути
+}
+
+class PhysicalProduct extends Product {
+  constructor() {
+    super();
+    // ...
+  }
+
+  saveToDataBase () {
+    // ...
+  }
+}
