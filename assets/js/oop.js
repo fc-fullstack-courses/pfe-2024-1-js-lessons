@@ -477,6 +477,7 @@ class Computer {
 
     S - SRP - Принцип єдиної відповідальності (Single responsibility principle)
     O - OCP - Принцип відкритості/закритості (Open/closed principle)
+    L - LSP - Принцип підстановки Лісков (Liskov substitution principle)
 */
 
 // Принцип єдиної відповідальності - кожен об'єкт / метод / клас має мати лише одн річ для якої він використовується
@@ -534,3 +535,46 @@ const filterByProp = (array, propName, propValue) => {
 
 filterByProp(workers, 'education', 'Могилянка');
 filterByProp(workers, 'fullName', 'Тарас Шевченко');
+
+// Принцип підстановки Лісков
+// екземпляри базового класу мають бути заміненими екземплярами
+// успадкуючих класів без зміни коду
+
+// class Figure {
+//   constructor (name) {
+//     this.name = name;
+//   }
+
+//   getArea () {
+//     console.log(`this function will calculate area of ${this.name}`);
+//     return 0; // повертаємо число
+//   }
+
+//   static isFigure (value) {
+//     return value instanceof Figure;
+//   }
+// }
+
+// class Rectangle extends Figure {
+//   constructor(a, b) {
+//     super('rectangle');
+//     this.a = a;
+//     this.b = b;
+//   }
+
+//   getArea () {
+//     return this.a * this.b; // повертаємо число
+//   }
+// }
+
+// class Triangle extends Figure {
+//   constructor(a, h) {
+//     super('triangle');
+//     this.a = a;
+//     this.h = h;
+//   }
+
+//   getArea() {
+//     return this.a * this.h * 0.5; // повертаємо число
+//   }
+// }
