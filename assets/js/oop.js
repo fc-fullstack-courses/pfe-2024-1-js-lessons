@@ -476,6 +476,7 @@ class Computer {
   SOLID
 
     S - SRP - Принцип єдиної відповідальності (Single responsibility principle)
+    O - OCP - Принцип відкритості/закритості (Open/closed principle)
 */
 
 // Принцип єдиної відповідальності - кожен об'єкт / метод / клас має мати лише одн річ для якої він використовується
@@ -495,3 +496,41 @@ function generateReport (worker, salary) {
   const performanceReport = worker.hoursWorked;
   return performanceReport;
 }
+
+// Принцип відкритості/закритості
+/*
+  Код має бути відкритим для розширення але закритим для прямих змін
+*/
+
+class Worker {
+  constructor(fullName, hoursWorked, hourlyRate, education, workplace) {
+    this.fullName = fullName;
+    this.hoursWorked = hoursWorked;
+    this.hourlyRate = hourlyRate;
+    this.education = education;
+    this.workplace = workplace;
+  }
+}
+
+const workers = [];
+
+class WorkerFilter {
+  static filterByName (workers, fullName) {
+    return workers.filter(worker => worker.fullName === fullName);
+  }
+
+  static filterByEducation (workers, education) {
+    return workers.filter(worker => worker.education === education);
+  }
+
+  static filterByRate (workers, hourlyRate) {
+    return workers.filter(worker => worker.hourlyRate === hourlyRate);
+  }
+}
+
+const filterByProp = (array, propName, propValue) => {
+  return array.filter(element => element[propName] === propValue);
+}
+
+filterByProp(workers, 'education', 'Могилянка');
+filterByProp(workers, 'fullName', 'Тарас Шевченко');
