@@ -479,6 +479,7 @@ class Computer {
     O - OCP - Принцип відкритості/закритості (Open/closed principle)
     L - LSP - Принцип підстановки Лісков (Liskov substitution principle)
     I - ISP - Принцип розділення інтерфейсу (Interface segregation principle)
+    D - DIP - Принцип інверсії залежностей (Dependency inversion principle)
 */
 
 // Принцип єдиної відповідальності - кожен об'єкт / метод / клас має мати лише одн річ для якої він використовується
@@ -616,5 +617,37 @@ class PhysicalProduct extends Product {
 
   saveToDataBase () {
     // ...
+  }
+}
+
+// Принцип інверсії залежностей
+
+class DeliveryService {
+
+}
+
+class UkrPoshtaDelivery extends DeliveryService {
+
+}
+
+class NovaPoshtaDelivery extends DeliveryService {
+
+}
+
+// class Order {
+//   constructor () {
+//     // ...
+//     this.deliveryService = new UkrPoshtaDelivery();
+//   }
+// }
+
+class Order {
+  /**
+   * 
+   * @param {DeliveryService} deliveryService 
+   */
+  constructor (deliveryService) {
+    // ...
+    this.deliveryService = deliveryService;
   }
 }
