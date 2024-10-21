@@ -39,7 +39,6 @@
 //   }
 // }
 
-
 // class Bird extends Animal {
 //   constructor (nickname, weight = 1, wingspan = 0.7) {
 //     // запуск батьківського конструктора ( зараз Animal)
@@ -88,15 +87,15 @@ class User {
     this.isBanned = false;
   }
 
-  createMessage () {
+  createMessage() {
     console.log('message created');
   }
 
-  deleteMessage () {
+  deleteMessage() {
     console.log('message deleted');
   }
 
-  static isUser (value) {
+  static isUser(value) {
     return value instanceof User;
   }
 }
@@ -104,7 +103,7 @@ class User {
 const user1 = new User('Test', 'Testenko', 12);
 
 class Moderator extends User {
-  constructor(firstName, lastName, age ) {
+  constructor(firstName, lastName, age) {
     super(firstName, lastName, age);
     this.subForumList = [];
   }
@@ -113,12 +112,14 @@ class Moderator extends User {
     this.subForumList.push(forumName);
   }
 
-  deleteSubForum (forumName) {
+  deleteSubForum(forumName) {
     // const newSubForumList = this.subForumList.filter((currentForum) => currentForum !== forumName);
 
     // this.subForumList = newSubForumList;
 
-    this.subForumList = this.subForumList.filter((currentForum) => currentForum !== forumName);
+    this.subForumList = this.subForumList.filter(
+      (currentForum) => currentForum !== forumName
+    );
   }
 }
 
@@ -135,21 +136,21 @@ const moder1 = new Moderator('Moder', 'the Great', 35);
 
 */
 class Admin extends Moderator {
-  constructor (firstName, lastName, age, contactEmail) {
+  constructor(firstName, lastName, age, contactEmail) {
     super(firstName, lastName, age);
     this.contactEmail = contactEmail;
   }
 
-  ban (user) {
-    if(!User.isUser(user)) {
+  ban(user) {
+    if (!User.isUser(user)) {
       throw new TypeError('user must be instance of User class');
     }
 
-    if(Admin.isAdmin(user)) {
+    if (Admin.isAdmin(user)) {
       throw new TypeError('user must not be an admin');
     }
 
-    if(user.isBanned) {
+    if (user.isBanned) {
       return user;
     }
 
@@ -157,12 +158,12 @@ class Admin extends Moderator {
     return user;
   }
 
-  unban (user) {
-    if(!User.isUser(user)) {
+  unban(user) {
+    if (!User.isUser(user)) {
       throw new TypeError('user must be instance of User class');
     }
 
-    if(!user.isBanned) {
+    if (!user.isBanned) {
       return user;
     }
 
@@ -170,7 +171,7 @@ class Admin extends Moderator {
     return user;
   }
 
-  static isAdmin (value) {
+  static isAdmin(value) {
     return value instanceof Admin;
   }
 }
@@ -180,17 +181,17 @@ const admin1 = new Admin('Tiran', 'Dykatorovich', 215, 'tiran@gmail.com');
 // admin1.ban(admin1);
 
 // /**
-//  * 
-//  * @param {number} a 
+//  *
+//  * @param {number} a
 //  */
 // function getAreaOfFigure(a) {
 //   return a * a;
 // }
 
 // /**
-//  * 
-//  * @param {number} a 
-//  * @param {number} b 
+//  *
+//  * @param {number} a
+//  * @param {number} b
 //  */
 // function getAreaOfFigure (a, b) {
 //   return a * b;
@@ -201,16 +202,16 @@ const admin1 = new Admin('Tiran', 'Dykatorovich', 215, 'tiran@gmail.com');
 
 // 2. Поліморфізм - можливість методів успадкованих класів працювати по різному
 class Figure {
-  constructor (name) {
+  constructor(name) {
     this.name = name;
   }
 
-  getArea () {
+  getArea() {
     console.log(`this function will calculate area of ${this.name}`);
     return NaN;
   }
 
-  static isFigure (value) {
+  static isFigure(value) {
     return value instanceof Figure;
   }
 }
@@ -222,7 +223,7 @@ class Rectangle extends Figure {
     this.b = b;
   }
 
-  getArea () {
+  getArea() {
     return this.a * this.b;
   }
 }
@@ -240,11 +241,11 @@ class Triangle extends Figure {
 }
 
 const figure1 = new Figure('some random figure');
-const rect1 = new Rectangle(2,5);
-const tri1 = new Triangle(2,5);
+const rect1 = new Rectangle(2, 5);
+const tri1 = new Triangle(2, 5);
 
-function getAreaOfFigure (figure) {
-  if(Figure.isFigure(figure)) {
+function getAreaOfFigure(figure) {
+  if (Figure.isFigure(figure)) {
     return figure.getArea();
   }
 
@@ -319,7 +320,7 @@ class Animal {
   #mood;
   #energy;
 
-  constructor (nickname, type) {
+  constructor(nickname, type) {
     this.nickname = nickname;
     this.type = type;
 
@@ -335,57 +336,57 @@ class Animal {
     this.#secret = 'try find be';
   }
 
-  get hunger () {
+  get hunger() {
     return this.#hunger;
   }
 
-  get energy () {
+  get energy() {
     return this.#energy;
   }
 
-  get mood () {
+  get mood() {
     return this.#mood;
   }
 
   // приватні методи - можна запускати тількі в коді всередені класу
-  #setMood (newMood) {
-    if(typeof newMood !== 'number' || isNaN(newMood)) {
+  #setMood(newMood) {
+    if (typeof newMood !== 'number' || isNaN(newMood)) {
       throw new TypeError('you must give number');
     }
 
-    if(newMood <= 100 && newMood >= 0) {
+    if (newMood <= 100 && newMood >= 0) {
       this.#mood = newMood;
-    } else if(newMood < 0) {
+    } else if (newMood < 0) {
       this.#mood = 0;
-    } else if(newMood > 100) {
+    } else if (newMood > 100) {
       this.#mood = 100;
     }
   }
 
-  #setHunger (newHunger) {
-    if(typeof newHunger !== 'number' || isNaN(newHunger)) {
+  #setHunger(newHunger) {
+    if (typeof newHunger !== 'number' || isNaN(newHunger)) {
       throw new TypeError('you must give number');
     }
 
-    if(newHunger <= 100 && newHunger >= 0) {
+    if (newHunger <= 100 && newHunger >= 0) {
       this.#hunger = newHunger;
-    } else if(newHunger < 0) {
+    } else if (newHunger < 0) {
       this.#hunger = 0;
-    } else if(newHunger > 100) {
+    } else if (newHunger > 100) {
       this.#hunger = 100;
     }
   }
 
-  #setEnergy (newEnergy) {
-    if(typeof newEnergy !== 'number' || isNaN(newEnergy)) {
+  #setEnergy(newEnergy) {
+    if (typeof newEnergy !== 'number' || isNaN(newEnergy)) {
       throw new TypeError('you must give number');
     }
 
-    if(newEnergy <= 100 && newEnergy >= 0) {
+    if (newEnergy <= 100 && newEnergy >= 0) {
       this.#energy = newEnergy;
-    } else if(newEnergy < 0) {
+    } else if (newEnergy < 0) {
       this.#energy = 0;
-    } else if(newEnergy > 100) {
+    } else if (newEnergy > 100) {
       this.#energy = 100;
     }
   }
@@ -397,7 +398,7 @@ class Animal {
     console.log(`тваринка спить`);
   }
 
-  eat () {
+  eat() {
     const hungerSated = 5;
 
     this.hunger += hungerSated;
@@ -407,7 +408,7 @@ class Animal {
     console.log(`тваринка їсть`);
   }
 
-  move () {
+  move() {
     this.#setEnergy(this.energy - 4);
     this.#setHunger(this.hunger - 3);
 
@@ -428,14 +429,14 @@ class Dog extends Animal {
     super(nickname, 'dog');
   }
 
-  sleep () {
+  sleep() {
     // this.#setEnergy(this.energy - 5); // error
   }
 }
 
 const dog1 = new Dog('dog1234');
 
-// 4. Абстракція - (не всіма вважається окремим концепцією). 
+// 4. Абстракція - (не всіма вважається окремим концепцією).
 /*
   полягає у виділенні найважливіших методів та властивостей об'єкту для вирішення задачі
   інші методи та детали не реалізуються.
@@ -444,22 +445,16 @@ const dog1 = new Dog('dog1234');
 */
 class Computer {
   #isOn;
-  constructor () {
+  constructor() {
     this.#isOn;
   }
 
   // низкорівневі (складні для розміння для загальної маси людей) методи
-  #applyCurrent () {
+  #applyCurrent() {}
 
-  }
+  #enablePeriferyDevices() {}
 
-  #enablePeriferyDevices (){
-
-  }
-
-  #startBIOS () {
-
-  }
+  #startBIOS() {}
 
   #startOS() {}
 
@@ -487,7 +482,7 @@ class Computer {
 // 2 + 2
 // '2' + 2
 
-function calculateSalary (worker) {
+function calculateSalary(worker) {
   const salary = worker.hoursWorked * worker.hourlyRate;
 
   // const performanceReport = worker.hoursWorked;
@@ -495,7 +490,7 @@ function calculateSalary (worker) {
   return salary;
 }
 
-function generateReport (worker, salary) {
+function generateReport(worker, salary) {
   const performanceReport = worker.hoursWorked;
   return performanceReport;
 }
@@ -518,22 +513,22 @@ class Worker {
 const workers = [];
 
 class WorkerFilter {
-  static filterByName (workers, fullName) {
-    return workers.filter(worker => worker.fullName === fullName);
+  static filterByName(workers, fullName) {
+    return workers.filter((worker) => worker.fullName === fullName);
   }
 
-  static filterByEducation (workers, education) {
-    return workers.filter(worker => worker.education === education);
+  static filterByEducation(workers, education) {
+    return workers.filter((worker) => worker.education === education);
   }
 
-  static filterByRate (workers, hourlyRate) {
-    return workers.filter(worker => worker.hourlyRate === hourlyRate);
+  static filterByRate(workers, hourlyRate) {
+    return workers.filter((worker) => worker.hourlyRate === hourlyRate);
   }
 }
 
 const filterByProp = (array, propName, propValue) => {
-  return array.filter(element => element[propName] === propValue);
-}
+  return array.filter((element) => element[propName] === propValue);
+};
 
 filterByProp(workers, 'education', 'Могилянка');
 filterByProp(workers, 'fullName', 'Тарас Шевченко');
@@ -587,11 +582,11 @@ class Product {
     // ...
   }
 
-  getDetails () {
+  getDetails() {
     // ...
   }
 
-  displayInFrontEnd () {
+  displayInFrontEnd() {
     // ...
   }
 
@@ -615,24 +610,18 @@ class PhysicalProduct extends Product {
     // ...
   }
 
-  saveToDataBase () {
+  saveToDataBase() {
     // ...
   }
 }
 
 // Принцип інверсії залежностей
 
-class DeliveryService {
+class DeliveryService {}
 
-}
+class UkrPoshtaDelivery extends DeliveryService {}
 
-class UkrPoshtaDelivery extends DeliveryService {
-
-}
-
-class NovaPoshtaDelivery extends DeliveryService {
-
-}
+class NovaPoshtaDelivery extends DeliveryService {}
 
 // class Order {
 //   constructor () {
@@ -643,11 +632,108 @@ class NovaPoshtaDelivery extends DeliveryService {
 
 class Order {
   /**
-   * 
-   * @param {DeliveryService} deliveryService 
+   *
+   * @param {DeliveryService} deliveryService
    */
-  constructor (deliveryService) {
+  constructor(deliveryService) {
     // ...
     this.deliveryService = deliveryService;
   }
+}
+
+// DRY (Dont Repeat Yourself) - не повторюйся
+// /**
+//  * @param {object} data
+//  * @returns {string}
+//  */
+// function generateAccessToken(data) {
+//   // якийсь код генерації токена
+//   const token = data.toString();
+
+//   return token;
+// }
+
+// /**
+//  * @param {object} data
+//  * @returns {string}
+//  */
+// function generateRefreshToken(data) {
+//   // якийсь код генерації токена
+//   const token = data.toLocalString();
+
+//   return token;
+// }
+
+function generateToken(data, options) {
+  // якийсь код генерації токена
+  const token = data.toLocalString();
+
+  return token;
+}
+
+// KISS (Keep it simple stupid) - між рішенням яке є складним для розуміння і
+// більш простим кодом варто обирати саме простіший запис
+function getVowelsNumber(str, vowelArray = ['a', 'e', 'i', 'o', 'u']) {
+  // if (typeof str !== 'string' || !str.trim()) {
+  //   throw new TypeError('Type of data is incorrect! Enter a valid string!');
+  // }
+
+  let vowelCount = 0;
+  let lowerCaseStr = str.toLowerCase();
+
+  for (let i = 0; i < lowerCaseStr.length; i++) {
+    if (vowelArray.includes(lowerCaseStr[i])) {
+      vowelCount++;
+    }
+  }
+
+  return vowelCount;
+}
+
+console.log(getVowelsNumber('tEst string'));
+
+function getVowelsNumber1(str, vowelArray = ['a', 'e', 'i', 'o', 'u']) {
+  let lowerCaseStr = str.toLowerCase();
+
+  const letters = lowerCaseStr.split('');
+
+  const vowels = letters.filter((letter) => {
+    return vowelArray.includes(letter);
+  });
+
+  return vowels.length;
+}
+
+const getVowelsNumber2 = (str, vowelArray = ['a', 'e', 'i', 'o', 'u']) =>
+  str
+    .toLowerCase()
+    .split('')
+    .filter((letter) => vowelArray.includes(letter)).length;
+
+const getVowelsNumberCompact = (str, vowelArray = ['a', 'e', 'i', 'o', 'u']) =>
+  str
+    .toLowerCase()
+    .split('')
+    .filter((l) => vowelArray.includes(l)).length;
+
+console.log(getVowelsNumberCompact('tEst string'));
+
+let x = +prompt('enter x');
+
+x > 100
+  ? x > 1000
+    ? console.log('very big x')
+    : console.log('big x')
+  : x > 0
+  ? console.log('normal x')
+  : console.log('small x');
+
+if(x > 1000) {
+  console.log('very big x')
+} else if (x > 100) {
+  console.log('big x')
+} else if (x > 0) {
+  console.log('normal x')
+} else {
+  console.log('small x')
 }
