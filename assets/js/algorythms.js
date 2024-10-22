@@ -86,7 +86,7 @@ getElemIndex(arr1, 50);
     а найменші у початку
 */
 function bubbleSort(array) {
-  debugger;
+  // debugger;
   for(let i = 0; i < array.length; i++) {
     // O (n * n) = O(n^2)
     for(let j = 0; j < array.length; j++) {
@@ -98,9 +98,9 @@ function bubbleSort(array) {
         array[j] = value2;
       }
       // O (n * n * n) = O(n^3)
-      for(let k = 0; k < array.length; k++) {
+      // for(let k = 0; k < array.length; k++) {
 
-      }
+      // }
     }
   }
 
@@ -111,3 +111,13 @@ function bubbleSort(array) {
 
   return array;
 }
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+const numbers = new Array(8000).fill(null).map(() => getRandomArbitrary(-5000, 5000));
+
+console.log('start');
+// bubbleSort(numbers);
+console.log('end');
