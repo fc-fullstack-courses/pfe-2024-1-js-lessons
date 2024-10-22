@@ -121,3 +121,37 @@ const numbers = new Array(8000).fill(null).map(() => getRandomArbitrary(-5000, 5
 console.log('start');
 // bubbleSort(numbers);
 console.log('end');
+
+// О(log N) - логарифмічна складність
+/*
+  Бінарний пошук
+    Масив обов'язково має бути відсортованим
+    1. знаходимо середину масиву і перевіряємо значення у ній
+    2.1 якщо співпало то кінець
+    2.2 якщо значення меньше то відсікаємо ліву частину включно з серединю
+    2.3 якщо значення більше то відсікаємо праву частину включно з серединю
+    повторюємо все з п1 поки не знайемо хзначення або елементи не скінчаться
+*/
+function binarySearch (array, targetElem) {
+  // debugger;
+  let startingIndex = 0;
+  let lastIndex = array.length - 1;
+
+  while(startingIndex <= lastIndex) {
+    let middleIndex = Math.floor((startingIndex + lastIndex) / 2);
+
+    if(array[middleIndex] === targetElem) {
+      return middleIndex;
+    }
+
+    if(array[middleIndex] < targetElem) {
+      startingIndex = middleIndex + 1;
+    } else {
+      lastIndex = middleIndex - 1;
+    }
+  }
+
+  return -1;
+}
+
+const numbers1 = [-2000, -791, -303, -50, 2, 15, 34, 38, 101, 186, 215, 798];
