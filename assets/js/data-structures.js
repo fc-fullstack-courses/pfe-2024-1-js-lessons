@@ -1,23 +1,22 @@
-
 class LinkedListNode {
   #next;
   #prev;
-  constructor (data) {
+  constructor(data) {
     this.data = data;
     this.next = null; // вказівник на наступний вузол у списку
     this.prev = null; // вказівник на попередній вузол у списку
   }
 
-  get next () {
+  get next() {
     return this.#next;
   }
 
-  get prev () {
+  get prev() {
     return this.#prev;
   }
 
-  set next (node) {
-    if(node === null || LinkedListNode.isLinkedListNode(node)) {
+  set next(node) {
+    if (node === null || LinkedListNode.isLinkedListNode(node)) {
       this.#next = node;
       return;
     }
@@ -25,8 +24,8 @@ class LinkedListNode {
     throw new TypeError('Invalid node value');
   }
 
-  set prev (node) {
-    if(node === null || LinkedListNode.isLinkedListNode(node)) {
+  set prev(node) {
+    if (node === null || LinkedListNode.isLinkedListNode(node)) {
       this.#prev = node;
       return;
     }
@@ -34,7 +33,7 @@ class LinkedListNode {
     throw new TypeError('Invalid node value');
   }
 
-  static isLinkedListNode (value) {
+  static isLinkedListNode(value) {
     return value instanceof LinkedListNode;
   }
 }
@@ -48,17 +47,16 @@ class DoubleLinkedList {
     this.length = 0; // довжина списку
   }
 
-  get head () {
+  get head() {
     return this.#head;
   }
 
-
-  get tail () {
+  get tail() {
     return this.#tail;
   }
 
-  set head (node) {
-    if(node === null || LinkedListNode.isLinkedListNode(node)) {
+  set head(node) {
+    if (node === null || LinkedListNode.isLinkedListNode(node)) {
       this.#head = node;
       return;
     }
@@ -66,8 +64,8 @@ class DoubleLinkedList {
     throw new TypeError('Invalid node value');
   }
 
-  set tail (node) {
-    if(node === null || LinkedListNode.isLinkedListNode(node)) {
+  set tail(node) {
+    if (node === null || LinkedListNode.isLinkedListNode(node)) {
       this.#tail = node;
       return;
     }
@@ -76,7 +74,7 @@ class DoubleLinkedList {
   }
 
   // вставка значення у кінець списку
-  push (data) {
+  push(data) {
     /*
       1. створити новий вузол списку
       2. вставити вузол у список
@@ -93,9 +91,9 @@ class DoubleLinkedList {
     // 1. створити новий вузол списку
     const newNode = new LinkedListNode(data);
 
-    // 2.1 якщо список пустий то зробити вузол 
+    // 2.1 якщо список пустий то зробити вузол
     // і головою і хвостом списку
-    if(this.length === 0) {
+    if (this.length === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -125,7 +123,7 @@ class DoubleLinkedList {
     */
 
     // 1. якщо список пустий то нічого не робимо взагалі
-    if(this.length === 0) {
+    if (this.length === 0) {
       return undefined;
     }
 
@@ -135,7 +133,7 @@ class DoubleLinkedList {
     // 2.2 змінюємо хвіст на передостанній елемент
     this.tail = prevNode;
     // 2.3 перевіряємо чи існує передостанній елемент (чи довжина дорівнює 1)
-    if(this.length === 1) {
+    if (this.length === 1) {
       // 2.3.1 якщо не існує то head встановлюємо в null
       this.head = null;
     } else {
@@ -150,6 +148,27 @@ class DoubleLinkedList {
     // 4. повертаємо вузол який видалили зі списку
     return deletedNode;
   }
+
+  [Symbol.iterator] () {
+    return new LinkedListIterator(this);
+  }
+}
+
+class LinkedListIterator {
+  constructor(list) {
+    this.list = list;
+    this.currentNode = null;
+  }
+
+  next() {
+
+    this.currentNode = this.currentNode ? this.currentNode.next : this.list.head;
+
+    return {
+      done: !this.currentNode,
+      value: this.currentNode,
+    };
+  }
 }
 
 const list1 = new DoubleLinkedList();
@@ -159,3 +178,34 @@ list1.push('second');
 list1.push('last');
 
 console.log(list1);
+
+// list1[Symbol.iterator] = function () {
+
+//   let currentNode = null;
+
+//   const iterator = {
+//     next: function () {
+
+//       if(currentNode) {
+//         currentNode = currentNode.next;
+//       } else {
+//         currentNode = list1.head;
+//       }
+
+//       const obj = {
+//         done: !currentNode,
+//         value: currentNode
+//       }
+
+//       return obj;
+//     }
+//   };
+
+//   return iterator;
+// }
+
+// const listIterator = list1[Symbol.iterator]();
+
+for (const node of list1) {
+  console.log(node);
+}
