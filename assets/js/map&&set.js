@@ -58,3 +58,24 @@ const arrWithUniqueNumbers = [...set3];
 
 const arrWithUniqueNumbers2 = [...new Set([1,2,3,5,7,1,9,8,10,8,2])];
 
+/*
+  створіть 2 масиви з іменами
+  за допомогою Set отримайте з них один масив з унікальними іменами
+  деякі імена мають бути присутні у обох початкових масивах 
+*/
+const names1 = ['John', 'Peter', 'Jane', 'Alice', 'Karl'];
+const names2 = ['Victoria', 'Victor', 'John', 'Karl', 'James'];
+
+// const uniqueNamesSet = new Set();
+
+// for(const name of names1) {
+//   uniqueNamesSet.add(name);
+// }
+
+// for(const name of names2) {
+//   uniqueNamesSet.add(name);
+// }
+
+// const uniqueNamesSet = new Set([...names1, ...names2]);
+
+const uniqueNames = [...new Set([...names1, ...names2])];
