@@ -24,7 +24,7 @@ set1.add(user);
 set1.add(user);
 set1.add(sameUser);
 
-console.log(set1);
+// console.log(set1);
 
 // видалення конкретного значення
 const deleteResult = set1.delete('10');
@@ -90,7 +90,7 @@ const obj = {
 }
 
 for(const key in obj) {
-  console.log(key);
+  // console.log(key);
 }
 
 /*
@@ -144,14 +144,58 @@ const deleteRes2 = map1.delete(4);
 // map1.clear();
 
 // розмір мапи
-console.log(map1.size);
+// console.log(map1.size);
 
 // forEach
 map1.forEach((value, key, map) => {
-  console.log(`value is`);
-  console.log(value);
-  console.log(`key is`);
-  console.log(key);
-  console.log(`map is`);
-  console.log(map);
+  // console.log(`value is`);
+  // console.log(value);
+  // console.log(`key is`);
+  // console.log(key);
+  // console.log(`map is`);
+  // console.log(map);
 });
+
+// cache
+// уявна функція яка довго працює
+function expensiveCalculations(user) {
+
+  // якісь складі довгі обчислення
+  for(let i = 0; i < 4_000_000_000; i++) {}
+
+  user.salary = user.salary ? user.salary + 10 : 100;
+
+  return user;
+}
+
+// console.log(expensiveCalculations(5));
+
+const cache = new Map();
+
+function effectiveCalculations(user) {
+  // debugger;
+  if(cache.has(user)) {
+    return cache.get(user);
+  }
+
+  const result = expensiveCalculations(user);
+  cache.set(user, result);
+
+  return result;
+}
+
+const res1 = effectiveCalculations(user1);
+
+console.log(res1);
+
+const user2 = {
+  salary: 20
+};
+
+const res2 = effectiveCalculations(user2);
+
+console.log(res2);
+
+const res3 = effectiveCalculations(user1);
+
+console.log(res3);
