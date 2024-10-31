@@ -184,21 +184,21 @@ function effectiveCalculations(user) {
   return result;
 }
 
-const res1 = effectiveCalculations(user1);
+// const res1 = effectiveCalculations(user1);
 
-console.log(res1);
+// console.log(res1);
 
-const user2 = {
-  salary: 20
-};
+// const user2 = {
+//   salary: 20
+// };
 
-const res2 = effectiveCalculations(user2);
+// const res2 = effectiveCalculations(user2);
 
-console.log(res2);
+// console.log(res2);
 
-const res3 = effectiveCalculations(user1);
+// const res3 = effectiveCalculations(user1);
 
-console.log(res3);
+// console.log(res3);
 
 /*
   Створити функцію яка буде приймати рядок
@@ -219,3 +219,36 @@ console.log(res3);
     s => 1,
     x => 1
 */
+
+function createLettersMap(string, ignoredSymbols = [' ', ',', '.', '!', '-']) {
+  const letterMap = new Map();
+
+  // for(const letter of string) {
+  //   if(letterMap.has(letter)) {
+  //     const oldValue = letterMap.get(letter);
+  //     letterMap.set(letter, oldValue + 1);
+  //   } else {
+  //     letterMap.set(letter, 1);
+  //   }
+  // }
+
+  // const ignoredSymbols = [' ', ',', '.', '!', '-'];
+
+  for(const letter of string) {
+    // if(letterMap.has(letter)) {
+    //   letterMap.set(letter, letterMap.get(letter) + 1);
+    // } else {
+    //   letterMap.set(letter, 1);
+    // }
+
+    if(!ignoredSymbols.includes(letter)) {
+      letterMap.set(letter, letterMap.has(letter) ? letterMap.get(letter) + 1: 1);
+    }
+  }
+
+  return letterMap;
+}
+
+const str = 'test, text.';
+
+const letterMap1 = createLettersMap(str);
