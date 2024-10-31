@@ -105,6 +105,17 @@ for(const key in obj) {
 // створення пустої мапи
 const map1 = new Map();
 
+// створення заповненної мапи
+const map2 = new Map([
+  // кортежі (tuples)
+  // масиви з конкретною кількістю елементів
+  // та певним порядком розміщення цих елементів
+  ['key', 'value'],
+  ['other key', 1000],
+  [500, false],
+  [{name: 'User'}, [1,2,3,4,5]]
+]);
+
 // додавання або перезаписує елементів до мапи
 map1.set('key', 10000);
 map1.set(123, 'some value');
@@ -252,3 +263,4 @@ function createLettersMap(string, ignoredSymbols = [' ', ',', '.', '!', '-']) {
 const str = 'test, text.';
 
 const letterMap1 = createLettersMap(str);
+
