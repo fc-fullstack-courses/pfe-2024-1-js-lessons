@@ -134,3 +134,28 @@ for (const [key, { name }] of testMap) {
   console.log(key);
   console.log(name);
 }
+
+// деструктуризоване присвоєння
+/*
+  маючи 2 змінні
+  поміняти їх значення місцями (а має стати рядком, b  - числом)
+*/
+let a = 10;
+let b = 'text';
+
+// ваш код тут
+// ...
+
+// v1 - через додаткову змінну
+// let temp = a;
+// a = b;
+// b = temp;
+
+// v2 - через деструктуризацію
+// const arr = [a, b];
+// [b, a] = arr;
+
+[b, a] = [a, b];
+
+console.log(a); // text
+console.log(b); // 10
