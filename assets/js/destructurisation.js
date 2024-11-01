@@ -85,10 +85,46 @@ const user = {
   id: 24,
   firstName: 'John',
   lastName: 'Doe',
-  email: 'johnDoe123@gmail.com',
-  password: '12345admin'
-}
+  password: '12345admin',
+  emails: ['johnDoe123@gmail.com', 'jd123@gmail.com', 'sandsaijd@.sadsa'],
+};
 
-// rest у деструктуризації об'єкта створює новий об'єкт 
-// в якому будуть усі недеструктуровані дані 
-const { password, ...userWithoutPassword } = user;
+// rest у деструктуризації об'єкта створює новий об'єкт
+// в якому будуть усі недеструктуровані дані
+const {
+  password,
+  emails: [personalEmail],
+  ...userWithoutPassword
+} = user;
+
+// деструктуризація масивів / ітерабельних об'єктів
+
+const numbers = [50, 700, -312.5, 4, 0, NaN, -2];
+
+// створити змінну у яку покласти 1 елемент масиву
+// const firstElem = numbers[0];
+
+const [firstElem, secondElem] = numbers;
+
+// якщо елемент треба пропустити то просто ставте кому без назви
+const [, , thirdElem, fourthElem] = numbers;
+
+// rest оператор завжди стоврить масив з недеструктуризованими елементами
+const [firstNumber, , ...restNumbers] = numbers;
+
+const testMap = new Map([
+  ['user1', { name: 'Test User' }],
+  ['user2', { name: 'Null Undefined' }],
+]);
+
+// for (const entry of testMap) {
+//   const [key, value] = entry;
+
+// const key = entry[0];
+// const value = entry[1];
+for (const [key, { name }] of testMap) {
+  // const { name } = value;
+
+  console.log(key);
+  console.log(name);
+}

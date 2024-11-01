@@ -149,7 +149,7 @@ class DoubleLinkedList {
     return deletedNode;
   }
 
-  [Symbol.iterator] () {
+  [Symbol.iterator]() {
     return new LinkedListIterator(this);
   }
 }
@@ -161,8 +161,9 @@ class LinkedListIterator {
   }
 
   next() {
-
-    this.currentNode = this.currentNode ? this.currentNode.next : this.list.head;
+    this.currentNode = this.currentNode
+      ? this.currentNode.next
+      : this.list.head;
 
     return {
       done: !this.currentNode,
@@ -209,3 +210,5 @@ console.log(list1);
 for (const node of list1) {
   console.log(node);
 }
+
+const [fisrtNodem, ...restNodes] = list1;
